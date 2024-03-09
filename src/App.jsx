@@ -2,10 +2,10 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Landingpage from './components/Landingpage'
 import Marquee from './components/Marquee'
-import About from './components/About'
 import Eyes from './components/Eyes'
 import Featured from './components/Featured'
 import Cards from './components/Cards'
+import Start from './components/Start'
 import Footer from './components/Footer'
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -18,9 +18,9 @@ function App() {
       <Navbar />
       <Landingpage />
       <Marquee />
-      <About />
       <Eyes />
       <Featured />
+      <Start />
       <Cards />
       <Footer />
     </div>

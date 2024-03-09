@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import About from './About'
 
 function Marquee() {
   return (
@@ -9,17 +10,18 @@ function Marquee() {
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
-          className='text-[20vw] leading-none font-["Founders_Grotesk_X_Condensed"] uppsercase pt-[5vw] pr-[2vw] font-medium'>
+          className='text-[20vw] leading-none font-["Founders_Grotesk_X_Condensed"] uppsercase pt-[4vw] pr-[2vw] font-medium'>
           We are Supreme
         </motion.h1>
         <motion.h1
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
-          className='text-[20vw] leading-none font-["Founders_Grotesk_X_Condensed"] uppsercase pt-[5vw] pr-[2vw] font-medium'>
+          className='text-[20vw] leading-none font-["Founders_Grotesk_X_Condensed"] uppsercase pt-[4vw] pr-[2vw] font-medium'>
           We are Supreme
         </motion.h1>
       </div>
+      <About />
     </div>
   )
 }
