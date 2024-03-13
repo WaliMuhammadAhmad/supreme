@@ -25,7 +25,7 @@ function Landingpage() {
                     );
                 })}
             </div>
-            <div className="px-8 py-5 border-t-[1px] border-zinc-800 mt-32 flex justify-between align-center px-5 py-2">
+            <div className="px-8 py-5 border-t-[1px] border-zinc-800 mt-32 flex justify-between content-baseline">
                 {["For public and private use", "We tell your story"].map((text, index) => (
                     <div className="masker">
                         <p key={index} className='text-lg tracking-tight leading-none'>
@@ -35,7 +35,7 @@ function Landingpage() {
                 ))}
                 <button className='px-[1vw] py-[1vh] bg-zinc-900 border-[1px] border-zinc-500 flex gap-5 items-center font-light text-sm uppercase rounded-full font-["Neue_Montreal"] hover:invert'>
                     Start the project
-                    <div className="w-[2vw] h-[2vw] flex items-center justify-center border-[2px] border-zinc-500 rounded-full">
+                    <div className="w-[1.75vw] h-[1.75vw] flex items-center justify-center border-[2px] border-zinc-500 rounded-full">
                         <span className='rotate-[45deg]'>
                             <FaArrowUpLong />
                         </span>

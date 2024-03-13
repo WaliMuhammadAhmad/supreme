@@ -54,9 +54,9 @@ function Slides() {
                     </div>
                 </motion.div>
             </div>
-            <button className='px-[1vw] py-[1vh] bg-zinc-900 border-[1px] border-zinc-500 flex gap-5 items-center font-light text-sm uppercase rounded-full font-["Neue_Montreal"] hover:invert'>
+            <button className='w-fit flex gap-5 items-center px-[1vh] py-[1vh] rounded-full border-2 uppercase bg-black hover:invert'>
                 See More
-                <div className="w-[2vw] h-[2vw] flex items-center justify-center border-[2px] border-zinc-500 rounded-full">
+                <div className="w-10 h-10 flex items-center justify-center border-[2px] rounded-full">
                     <span className='rotate-[45deg]'>
                         <FaArrowUpLong />
                     </span>

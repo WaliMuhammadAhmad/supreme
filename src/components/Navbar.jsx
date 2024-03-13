@@ -9,8 +9,8 @@ function Navbar() {
         </a>
       </div>
       <div className="links flex gap-10 justify-center items center">
-        {['Services', 'Our work', 'About us', 'Insights', 'Contact us'].map((link, index) => (
-          <a href="#" key={index} className={`text-lg capitalize font-light ${index === 4 && "ml-[10vw]"} `}>{link}</a>
+        {['Services', 'Our work', 'About us', 'Get Started'].map((link, index) => (
+          <a href="#" key={index} className={`text-lg capitalize font-light ${index === 3 && "ml-[10vw]"} `}>{link}</a>
         ))}
       </div>
     </div>
