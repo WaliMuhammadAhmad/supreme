@@ -11,10 +11,11 @@ function About() {
                 <div className='w-1/2 '>
                     <h1 className='text-[5vw] capitalize tracking-tighter'>Our apporach :</h1>
                     <button className='flex gap-10 items-center px-[2vh] py-[2vh] bg-zinc-900 mt-[2vh] rounded-full text-white uppercase hover:invert'>Read More
-                        <div className='w-2 h-2 bg-white rounded-full'></div>
+                        <div className='w-2 h-2 bg-white rounded-full'>
+                        </div>
                     </button>
                 </div>
-                <div className='w-1/2 h-[70vh] rounded-3xl bg-[#A1B562]'></div>
+                <img className='w-1/2 h-[70vh] rounded-xl' src="img\eyeopening.gif" alt="" />
             </div>
         </div>
     )

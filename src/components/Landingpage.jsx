@@ -16,7 +16,9 @@ function Landingpage() {
                                         initial={{ width: 0 }}
                                         animate={{ width: "8vw" }}
                                         transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
-                                        className="mr-[.2vw] w-[8vw] rounded-md h-[5vw] relative bg-red-500"></motion.div>)}
+                                        >
+                                            <img className='mr-[.2vw] w-[8vw] rounded-md h-[5vw]' src="img\eyeopening.jpg" alt="" />
+                                        </motion.div>)}
                                 <h1 key={index} className='flex items-center h-full uppercase text-[7vw] leading-[6vw] tracking-tighter font-bold'>
                                     {text}
                                 </h1>

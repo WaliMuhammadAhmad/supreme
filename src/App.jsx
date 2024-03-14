@@ -8,6 +8,7 @@ import Start from './components/Start'
 import Footer from './components/Footer'
 import LocomotiveScroll from 'locomotive-scroll';
 import EyesContainer from './components/EyesContainer'
+import Login from './components/Login'
 
 function App() {
 
@@ -15,14 +16,15 @@ function App() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      <Navbar />
+      {/* <Navbar />
       <Landingpage />
       <Marquee />
       <EyesContainer />
       <Featured />
       <Start />
       <Cards />
-      <Footer />
+      <Footer /> */}
+      <Login />
     </div>
   )
 }
