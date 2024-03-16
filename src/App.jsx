@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import LocomotiveScroll from 'locomotive-scroll';
 import EyesContainer from './components/EyesContainer'
 import Login from './components/Login'
+import CustomBtn from './components/raw/CustomBtn'
 
 function App() {
 
