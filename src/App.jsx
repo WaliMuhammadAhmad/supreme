@@ -1,15 +1,8 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Landingpage from './components/Landingpage'
-import Marquee from './components/Marquee'
-import Featured from './components/Featured'
-import Cards from './components/Cards'
-import Start from './components/Start'
-import Footer from './components/Footer'
+// import Login from './components/pages/Login'
+// import UserHome from './components/pages/UserHome'
 import LocomotiveScroll from 'locomotive-scroll';
-import EyesContainer from './components/EyesContainer'
-import Login from './components/Login'
-import CustomBtn from './components/raw/CustomBtn'
+import About from './components/pages/About'
 
 function App() {
 
@@ -17,15 +10,9 @@ function App() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      {/* <Navbar />
-      <Landingpage />
-      <Marquee />
-      <EyesContainer />
-      <Featured />
-      <Start />
-      <Cards />
-      <Footer /> */}
-      <Login />
+      {/* <Login /> */}
+      {/* <UserHome /> */}
+      <About />
     </div>
   )
 }

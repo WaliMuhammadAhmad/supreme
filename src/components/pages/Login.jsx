@@ -1,7 +1,10 @@
-import React from 'react';
-import SwipBtn from './raw/SwipBtn';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import SwipBtn from '../raw/SwipBtn';
 
 function Login() {
+
+    const [isAnimationActive, setIsAnimationActive] = useState(false);
 
     return (
         <div className="font-display tracking-tight w-full h-screen bg-[url('C:\Users\wali\Documents\Project\supreme\public\img\logo\logo.svg')] flex items-center justify-center">
@@ -47,19 +50,25 @@ function Login() {
                         </div>
                         <input type="submit" value={"Sign In"} className="w-full py-2.5 px-5 text-sm font-medium border-2 uppercase text-zinc-900 border-zinc-900 rounded-md hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-0 focus:border-zinc-900" />
                     </form>
-                </div> 
-            <div className='absolute w-1/4 h-3/4 flex flex-col justify-center gap-10 text-zinc-900 bg-[#CDEA68] rounded-xl'>
-                <div className='flex flex-col items-center'>
+                </div>
+
+                <motion.div
+                    initial={{ translateX: "0%" }}
+                    animate={{ translateX: isAnimationActive ? "100%" : "0%" }}
+                    transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+                    className='absolute w-1/4 h-3/4 flex flex-col justify-center gap-10 text-zinc-900 bg-[#CDEA68] rounded-xl'
+                >
+                    <div className='flex flex-col items-center'>
                         <img className='w-1/4' src="img\logo\logo.svg" alt="" />
                         <h1>Welcome to Supreme</h1>
                     </div>
                     <div className='flex flex-col items-center gap-5'>
                         <p>Not Signed In yet?</p>
-                        <SwipBtn text='sign up' />
+                        <SwipBtn text='sign up' onClick={() => setIsAnimationActive(!isAnimationActive)} />
                     </div>
+                </motion.div>
             </div>
-            </div>
-        </div>
+        </div >
     );
 }
 
