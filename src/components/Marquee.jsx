@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import About from './About'
+import Intro from './Intro'
 
 function Marquee() {
   return (
@@ -21,7 +21,7 @@ function Marquee() {
           We are Supreme
         </motion.h1>
       </div>
-      <About />
+      <Intro />
     </div>
   )
 }

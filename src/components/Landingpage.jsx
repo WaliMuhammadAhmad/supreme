@@ -10,27 +10,29 @@ function Landingpage(props) {
                 {/* <h1 className='text-white'>{props.title1}</h1> */}
                 {[props.title1, props.title2, props.title3].map((text, index) => {
                     return (
-                        <div className="masker">
+                        <div className="masker" key={index}>
                             <div className="w-fit flex items-end overflow-hidden">
                                 {index === 1 && (
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: "8vw" }}
                                         transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
-                                        >
-                                            <img className='mr-[.2vw] w-[8vw] rounded-md h-[5vw]' src={props.url} alt="" />
-                                        </motion.div>)}
-                                <h1 key={index} className='flex items-center h-full uppercase text-[7vw] leading-[6vw] tracking-tighter font-bold'>
+                                    >
+                                        <img className='mr-[.2vw] w-[8vw] rounded-md h-[5vw]' src={props.url} alt="" />
+                                    </motion.div>
+                                )}
+                                <h1 className='flex items-center h-full uppercase text-[7vw] leading-[6vw] tracking-tighter font-bold'>
                                     {text}
                                 </h1>
                             </div>
                         </div>
                     );
                 })}
+
             </div>
             <div className="px-8 py-5 border-t-[1px] border-zinc-800 mt-32 flex justify-between content-baseline">
                 {[props.subtitle, props.description].map((text, index) => (
-                    <div className="masker">
+                    <div className="masker" key={index}>
                         <p key={index} className='text-lg tracking-tight leading-none'>
                             {text}
                         </p>

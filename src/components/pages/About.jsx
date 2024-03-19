@@ -1,6 +1,10 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import Landingpage from '../Landingpage'
+import Intro from '../Intro'
+import Cards from '../Cards'
+import Start from '../Start'
+import Footer from '../Footer'
+// import Landingpage from '../Landingpage'
 
 function About() {
 
@@ -16,8 +20,17 @@ function About() {
   return (
     <div>
       <Navbar />
-      <Landingpage prop={text} />
-      
+      <div className='w-full h-screen bg-red-500'>
+
+      </div>
+      {/* <Landingpage prop={text} /> */}
+      <Intro props='about' />
+      <div className='w-full h-screen bg-red-500'>
+
+      </div>
+      <Start />
+      <Cards />
+      <Footer />
     </div>
   )
 }
