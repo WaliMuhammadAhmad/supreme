@@ -1,7 +1,7 @@
 import React from 'react'
+import LocomotiveScroll from 'locomotive-scroll';
 // import Login from './components/pages/Login'
 // import UserHome from './components/pages/UserHome'
-import LocomotiveScroll from 'locomotive-scroll';
 import About from './components/pages/About'
 
 function App() {

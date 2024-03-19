@@ -3,11 +3,10 @@ import React from 'react'
 import { FaArrowUpLong } from 'react-icons/fa6'
 
 function Landingpage(props) {
-    // console.log(props.title1)
+
     return (
         <div data-scroll data-scroll-speed="-.3" className='w-full h-screen bg-zinc-900 pt-1'>
             <div className="textstructure mt-40 px-20">
-                {/* <h1 className='text-white'>{props.title1}</h1> */}
                 {[props.title1, props.title2, props.title3].map((text, index) => {
                     return (
                         <div className="masker" key={index}>

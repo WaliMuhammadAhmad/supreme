@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Intro(props) {
+function Intro() {
     return (
         <div data-scroll data-scroll-section data-scroll-speed="-.09" className='w-full p-[10vh] bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black'>
             <p className='text-[3vw] leading-[3.5vw] text-[Neue_Montreal] tracking-tighter text-wrap text-justify'>
