@@ -1,9 +1,9 @@
 import React from 'react'
 import LocomotiveScroll from 'locomotive-scroll';
-// import Login from './components/pages/Login'
+import Login from './pages/Login'
 // import UserHome from './components/pages/UserHome'
 // import About from './components/pages/About'
-import Approach from './components/pages/Approach';
+// import Approach from './components/pages/Approach';
 
 function App() {
 
@@ -11,10 +11,10 @@ function App() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      {/* <Login /> */}
+      <Login />
       {/* <UserHome /> */}
       {/* <About /> */}
-      <Approach />
+      {/* <Approach /> */}
     </div>
   )
 }

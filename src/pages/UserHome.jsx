@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import Landingpage from '../Landingpage'
-import Marquee from '../Marquee'
-import Featured from '../Featured'
-import Cards from '../Cards'
-import Start from '../Start'
-import Footer from '../Footer'
-import EyesContainer from '../EyesContainer'
+import Navbar from '../components/Navbar'
+import Landingpage from '../components/Landingpage'
+import Marquee from '../components/Marquee'
+import Featured from '../components/Featured'
+import Cards from '../components/Cards'
+import Start from '../components/Start'
+import Footer from '../components/Footer'
+import EyesContainer from '../components/EyesContainer'
 
 function UserHome() {
 

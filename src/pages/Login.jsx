@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import SwipBtn from '../raw/SwipBtn';
+import SwipBtn from '../components/raw/SwipBtn';
 
 function Login() {
 
     const [isAnimationActive, setIsAnimationActive] = useState(false);
+
+    //Validation for the form
+    
 
     return (
         <div className="font-display tracking-tight w-full h-screen bg-[url('C:\Users\wali\Documents\Project\supreme\public\img\logo\logo.svg')] flex items-center justify-center">
