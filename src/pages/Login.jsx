@@ -7,11 +7,12 @@ function Login() {
     const [isAnimationActive, setIsAnimationActive] = useState(false);
 
     //Validation for the form
-    
+
 
     return (
         <div className="font-display tracking-tight w-full h-screen bg-[url('C:\Users\wali\Documents\Project\supreme\public\img\logo\logo.svg')] flex items-center justify-center">
             <div className="container w-1/2 h-3/4 flex bg-[#004D43] rounded-xl">
+                {/* Sign up form */}
                 <div className='w-1/2 flex flex-col justify-evenly items-center rounded-xl'>
                     <form className="max-w-md mx-auto">
                         <div className="grid md:grid-cols-2 md:gap-6">
@@ -39,6 +40,7 @@ function Login() {
                         <input type="submit" value={"Sign Up"} className="w-full py-2.5 px-5 text-sm font-medium border-2 text-zinc-900 border-zinc-900 rounded-md hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-0 focus:border-zinc-900" />
                     </form>
                 </div>
+                {/* Sign in form */}
                 <div className='w-1/2 flex flex-col justify-evenly items-center rounded-xl'>
                     <form className="max-w-md mx-auto">
                         <div className="grid">
@@ -54,7 +56,7 @@ function Login() {
                         <input type="submit" value={"Sign In"} className="w-full py-2.5 px-5 text-sm font-medium border-2 uppercase text-zinc-900 border-zinc-900 rounded-md hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-0 focus:border-zinc-900" />
                     </form>
                 </div>
-
+                {/* Animation page that float over the pages*/}
                 <motion.div
                     initial={{ translateX: "0%" }}
                     animate={{ translateX: isAnimationActive ? "100%" : "0%" }}
