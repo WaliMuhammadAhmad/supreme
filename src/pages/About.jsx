@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Cards from '../components/Cards'
-import Footer from '../components/Footer'
-import Landingpage from '../components/Landingpage'
-import Marquee from '../components/Marquee'
-import Introduction from '../components/Introduction';
-import Founder from '../components/Founder';
-import Reviews from '../components/Reviews';
+import Navbar from './components/Navbar'
+import Cards from './components/Cards'
+import Footer from './components/Footer'
+import Landingpage from './components/Landingpage'
+import Marquee from './components/Marquee'
+import Introduction from './components/Introduction';
+import Founder from './components/Founder';
+import Reviews from './components/Reviews';
 
 function About() {
 

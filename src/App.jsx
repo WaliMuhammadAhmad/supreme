@@ -1,9 +1,11 @@
 import React from 'react'
 import LocomotiveScroll from 'locomotive-scroll';
-import Login from './pages/Login'
-// import UserHome from './components/pages/UserHome'
-// import About from './components/pages/About'
-// import Approach from './components/pages/Approach';
+// import AdminDashboard from './pages/AdminDashboard';
+import UserDashboard from './pages/UserDashboard';
+// import Login from './pages/Login'
+// import HomePage from './pages/HomePage'
+// import About from './pages/About'
+// import Approach from './pages/Approach';
 
 function App() {
 
@@ -11,10 +13,12 @@ function App() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      <Login />
-      {/* <UserHome /> */}
+      {/* <Login /> */}
+      {/* <HomePage /> */}
       {/* <About /> */}
       {/* <Approach /> */}
+      <UserDashboard />
+      {/* <AdminDashboard /> */}
     </div>
   )
 }

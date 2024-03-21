@@ -8,7 +8,7 @@ import Start from '../components/Start'
 import Footer from '../components/Footer'
 import EyesContainer from '../components/EyesContainer'
 
-function UserHome() {
+function HomePage() {
 
   let text = {
     title1: 'we create',
@@ -33,4 +33,4 @@ function UserHome() {
   )
 }
 
-export default UserHome
+export default HomePage
