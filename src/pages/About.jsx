@@ -14,13 +14,15 @@ function About() {
     title1: 'eye-opening',
     title2: 'eye-catching',
     title3: 'presentations',
-    url: 'img/ecatching.jpg',
+    url: 'img/asserts/ecatching.jpg',
     subtitle: 'why:',
     description: 'Almost everything that needs to be communicated is better shown than explained.',
+    btnText: "start the project",
+    scroll: -.3
   };
 
   return (
-    <div>
+    <div className='text-white'>
       <Navbar />
       <Landingpage {...text} />
       <Marquee />

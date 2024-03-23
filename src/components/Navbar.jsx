@@ -2,7 +2,7 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div className='fixed z-[999] w-full px-[2vw] py-[3vh] font-["Neue_Montreal"] flex justify-between align-center backdrop-blur-sm'>
+    <div className='fixed z-[999] w-full px-[2vw] py-[3vh] font-display text-white flex justify-between align-center backdrop-blur-sm'>
       <div className="logo">
         <a className='invert flex w-[10vw]' href="#">
           <img src="img\logo\supreme.svg" alt="" />
