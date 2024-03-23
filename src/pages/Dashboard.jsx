@@ -9,7 +9,7 @@ function Dashboard() {
     }
     
   return (
-    <div className='h-screen bg-gradient-to-b from-lime-400 via-teal-700 to-teal-900'>
+    <div className='h-screen bg-cover bg-[url("C:\Users\wali\Documents\Project\supreme\public\img\logo\logo.svg")]'>
         <Topbar {...person} />
         <SideBar />
     </div>

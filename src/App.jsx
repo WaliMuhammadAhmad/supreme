@@ -1,7 +1,7 @@
 import React from 'react';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
-// import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Approach from './pages/Approach';
 import NotFound from './pages/NotFound';
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
   //     </PrivateRoute>
   //   ),
   // },
-  // {
-  //   path: '/',
-  //   element: <HomePage />,
-  //   errorElement: <NotFound />,
-  // },
+  {
+    path: '/',
+    element: <HomePage />,
+    errorElement: <NotFound />,
+  },
   {
     path: '/about',
     element: <About />,
