@@ -33,7 +33,7 @@ function Slides() {
                         ))}
                     </h1>
                     <div className='card w-full h-full rounded-xl overflow-hidden'>
-                        <img className='w-full h-full bg-cover' src="\img\cards\GPT4.png" alt="" />
+                        <img className='w-full h-full bg-cover' src="\img\caseStudies\GPT4.png" alt="" />
                     </div>
                 </motion.div>
                 <motion.div
@@ -50,7 +50,7 @@ function Slides() {
                         ))}
                     </h1>
                     <div className='card w-full h-full rounded-xl overflow-hidden'>
-                        <img className='w-full h-full bg-cover' src="\img\cards\trawa.jpg" alt="" />
+                        <img className='w-full h-full bg-cover' src="\img\caseStudies\trawa.jpg" alt="" />
                     </div>
                 </motion.div>
             </div>

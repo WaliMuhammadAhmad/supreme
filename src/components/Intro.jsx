@@ -7,7 +7,7 @@ function Intro() {
                 <b className='capitalize  underline hover:no-underline'>our mission</b> is simple: to create visually stunning PowerPoint slides that leave a lasting impression on your audience. With our innovative approach, we infuse each slide with captivating 3D effects, dynamic animations, and smooth transitions, ensuring your message is delivered with maximum impact. Trust Supreme to transform your ideas into extraordinary slide presentations. We are not just a presentation service;
                 <b className='uppercase underline hover:no-underline'>We are Supreme</b>
             </p>
-            <div className="w-full flex gap-5 border-t-[0.1vh] pt-[12vh] mt-[10vh] border-[#A1B562]">
+            <div className="w-full flex gap-5 border-t-[0.1vh] border-zinc-900 pt-[12vh] mt-[10vh] justify-around">
                 <div className='w-1/2 '>
                     <h1 className='text-[5vw] capitalize tracking-tighter'>Our apporach :</h1>
                     <button className='flex gap-10 items-center px-[2vh] py-[2vh] bg-zinc-900 mt-[2vh] rounded-full text-white uppercase hover:invert'>Read More
@@ -15,7 +15,7 @@ function Intro() {
                         </div>
                     </button>
                 </div>
-                <img className='w-1/2 h-[70vh] rounded-xl' src="img\eyeopening.gif" alt="" />
+                <img className='size-2/5 rounded-xl' src="img\asserts\discover.svg" alt="" />
             </div>
         </div>
     )

@@ -1,26 +1,70 @@
-import React from 'react'
+import React from 'react';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+// import HomePage from './pages/HomePage';
+import About from './pages/About';
+import Approach from './pages/Approach';
+import NotFound from './pages/NotFound';
+import NewProject from './dashboard/content/NewProject';
+import Stats from './dashboard/content/Stats';
+import Users from './dashboard/content/Users';
+import Profile from './dashboard/content/Profile';
+import Progress from './dashboard/content/Progress';
 import LocomotiveScroll from 'locomotive-scroll';
-// import AdminDashboard from './pages/AdminDashboard';
-import UserDashboard from './pages/UserDashboard';
-// import Login from './pages/Login'
-// import HomePage from './pages/HomePage'
-// import About from './pages/About'
-// import Approach from './pages/Approach';
+// import { checkUserAuthentication } from './utils/auth';
+import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
 
-function App() {
+const router = createBrowserRouter([
+  // {
+  //   path: '/dashboard',
+  //   element: (
+  //     <PrivateRoute>
+  //       <Dashboard />
+  //     </PrivateRoute>
+  //   ),
+  // },
+  // {
+  //   path: '/',
+  //   element: <HomePage />,
+  //   errorElement: <NotFound />,
+  // },
+  {
+    path: '/about',
+    element: <About />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/approach',
+    element: <Approach />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: '/dashboard/:pageName',
+        element: <Stats />
+      }
+    ],
+  }
+  // Other routes...
+]);
 
-  const locomotiveScroll = new LocomotiveScroll();
-
-  return (
-    <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      {/* <Login /> */}
-      {/* <HomePage /> */}
-      {/* <About /> */}
-      {/* <Approach /> */}
-      <UserDashboard />
-      {/* <AdminDashboard /> */}
-    </div>
-  )
+function PrivateRoute({ children }) {
+  const isAuthenticated = checkUserAuthentication();
+  return isAuthenticated ? children : <Navigate to="/login" />;
 }
 
-export default App
+function App() {
+  const locomotiveScroll = new LocomotiveScroll();
+  return <RouterProvider router={router} />;
+}
+
+export default App;

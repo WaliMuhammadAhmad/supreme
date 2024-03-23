@@ -59,7 +59,7 @@ function Login() {
                 {/* Animation page that float over the pages*/}
                 <motion.div
                     initial={{ translateX: "0%" }}
-                    animate={{ translateX: isAnimationActive ? "100%" : "0%" }}
+                    animate={{ translateX: isAnimationActive ? "0%" : "100%" }}
                     transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
                     className='absolute w-1/4 h-3/4 flex flex-col justify-center gap-10 text-zinc-900 bg-[#CDEA68] rounded-xl'
                 >

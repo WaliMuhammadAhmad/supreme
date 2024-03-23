@@ -14,7 +14,7 @@ function HomePage() {
     title1: 'we create',
     title2: 'eye-opening',
     title3: 'presentations',
-    url: 'img/eyeopening.jpg',
+    url: 'img/asserts/eopening.jpg',
     subtitle: 'for public and private use',
     description: 'we tell your story',
   };
