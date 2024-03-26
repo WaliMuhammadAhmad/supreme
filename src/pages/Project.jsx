@@ -1,7 +1,7 @@
 import React from 'react'
 import Landingpage from '../components/Landingpage'
 import Navbar from '../components/Navbar';
-import ContactForm from '../components/ContactForm';
+import ProjectForm from '../components/ProjectForm';
 import VideoAnimation from '../components/VideoAnimation';
 import FAQ from '../components/FAQ';
 import Founder from '../components/Founder';
@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import Reviews from '../components/Reviews';
 
 function Project() {
+
     let text = {
         title1: 'Let’s start',
         title2: 'a project',
@@ -18,6 +19,7 @@ function Project() {
         subtitle: "We don't make slides only :-)",
         description: "We make soulful presentations which make your audience feel something",
         btnText: "Our Approach",
+        btnLink: '/approach',
         scroll: 0
     };
 
@@ -30,8 +32,8 @@ function Project() {
         <div>
             <Navbar />
             <Landingpage {...text} />
-            <ContactForm />
             <VideoAnimation />
+            <ProjectForm />
             <FAQ />
             <Reviews />
             <Founder {...msg} />

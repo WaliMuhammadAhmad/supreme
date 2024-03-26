@@ -1,11 +1,13 @@
 import React from 'react';
 import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
 import HomePage from './pages/HomePage';
+import Services from './pages/Services';
+import Work from './pages/Work';
 import About from './pages/About';
 import Approach from './pages/Approach';
 import Project from './pages/Project';
 import NotFound from './pages/NotFound';
+import Slip from './pages/Slip';
 import Stats from './dashboard/content/Stats';
 // import NewProject from './dashboard/content/NewProject';
 // import Users from './dashboard/content/Users';
@@ -14,6 +16,8 @@ import Stats from './dashboard/content/Stats';
 import LocomotiveScroll from 'locomotive-scroll';
 // import { checkUserAuthentication } from './utils/auth';
 import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const router = createBrowserRouter([
   // {
@@ -30,6 +34,16 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
+    path: '/services',
+    element: <Services />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/work',
+    element: <Work />,
+    errorElement: <NotFound />,
+  },
+  {
     path: '/about',
     element: <About />,
     errorElement: <NotFound />,
@@ -40,13 +54,23 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
+    path: '/slip',
+    element: <Slip />,
+    errorElement: <NotFound />,
+  },
+  {
     path: '/approach',
     element: <Approach />,
     errorElement: <NotFound />,
   },
   {
-    path: '/login',
-    element: <Login />,
+    path: '/signin',
+    element: <SignIn />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/signup',
+    element: <SignUp />,
     errorElement: <NotFound />,
   },
   {

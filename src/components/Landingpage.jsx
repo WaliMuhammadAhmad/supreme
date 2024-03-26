@@ -4,8 +4,13 @@ import CustomBtn from './raw/CustomBtn';
 
 function Landingpage(props) {
 
+    let btn = {
+        btnText:props.btnText,
+        btnLink:props.btnLink
+    }
+
     return (
-        <div data-scroll data-scroll-speed={props.scroll} className='w-full h-screen bg-zinc-900 pt-1 text-white'>
+        <div data-scroll data-scroll-speed={props.scroll} className='w-full lg:h-screen md:h-full bg-zinc-900 pt-1 text-white'>
             <div className="textstructure mt-40 px-20">
                 {[props.title1, props.title2, props.title3].map((text, index) => {
                     return (
@@ -32,12 +37,12 @@ function Landingpage(props) {
             <div className="px-8 py-5 border-t-[1px] border-zinc-800 mt-32 flex justify-between content-baseline">
                 {[props.subtitle, props.description].map((text, index) => (
                     <div className="masker" key={index}>
-                        <p key={index} className='text-lg tracking-tight leading-none'>
+                        <p key={index} className='lg:text-lg tracking-tight leading-none'>
                             {text}
                         </p>
                     </div>
                 ))}
-                <CustomBtn text={props.btnText} />
+                <CustomBtn {...btn}/>
             </div>
         </div>
     )

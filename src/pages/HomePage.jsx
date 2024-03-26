@@ -17,7 +17,9 @@ function HomePage() {
     url: 'img/asserts/eopening.jpg',
     subtitle: 'for public and private use',
     description: 'we tell your story',
-    btnText: 'Start the project'
+    btnText: 'Start the project',
+    btnLink: '/project',
+    scroll: -0.3
   };
 
   return (

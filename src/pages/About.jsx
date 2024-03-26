@@ -18,8 +18,14 @@ function About() {
     subtitle: 'why:',
     description: 'Almost everything that needs to be communicated is better shown than explained.',
     btnText: "start the project",
+    btnLink: '/project',
     scroll: -.3
   };
+
+  let msg = {
+    title: 'Wali Muhammad Ahmad',
+    text: 'We are a team of professional designers and developers who are dedicated to creating beautiful and effective websites and presentations. We are passionate about our work and we love to turn our clients visions into reality. We are committed to providing the best possible service to our clients and we are always looking for new ways to improve our work. We are always looking for new challenges and we'
+};
 
   return (
     <div className='text-white'>
@@ -27,7 +33,7 @@ function About() {
       <Landingpage {...text} />
       <Marquee />
       <Introduction />
-      <Founder />
+      <Founder {...msg} />
       <Reviews />
       <Cards />
       <Footer />
