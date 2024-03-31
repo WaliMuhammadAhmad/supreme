@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const theme = {
     SidebarItems: 'font-display tracking-tight py-2 px-2 hover:rounded-l-xl hover:border hover:bg-zinc-800 cursor-pointer',
     HomeCards: 'w-1/2 mx-2 bg-zinc-700 shadow-lg rounded-lg bg-zinc-900 py-10',
+    HomeProject: 'px-5 bg-zinc-700 shadow-lg rounded-lg bg-zinc-900 py-10',
     ProjectCards: 'flex justify-around items-center border rounded-xl bg-zinc-900',
 }
 
@@ -55,31 +56,23 @@ function User() {
 
                 <div className="w-full bg-zinc-900 shadow-lg rounded-lg px-2 py-5 flex gap-5">
                     <div className={`${theme.ProjectCards}`}>
-                        <div className='flex flex-col gap-2 p-5 border-r'>
-                            <p>Phase 1</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
-                            <p>Phase 2</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
-                            <p>Phase 3</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
-                            <p>Phase 4</p><progress className="progress progress-info w-56" value={75} max="100"></progress>
-                            <p>Phase 5</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
-                        </div>
-                        <div className='w-1/2 flex flex-col gap-2 text-center px-5'>
-                            <div className="text-info  text-lg font-semibold">Project Name</div>
-                            <div className="text-info  font-condensed text-8xl font-bold">75%</div>
-                            <div className="text-info ">1 Phases remaining</div>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">67%</div>
+                                <div className="text-[#CDEA68]">Phase 4</div>
+                                <progress className="progress progress-info w-56" value={75} max="100"></progress>
+                            </div>
                         </div>
                     </div>
                     <div className={`${theme.ProjectCards}`}>
-                        <div className='flex flex-col gap-2 p-5 border-r'>
-                            <p>Phase 1</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
-                            <p>Phase 2</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
-                            <p>Phase 3</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
-                            <p>Phase 4</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
-                            <p>Phase 5</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
-                        </div>
-                        <div className='w-1/2 flex flex-col gap-2 text-center px-5'>
-                            <div className="text-info  text-lg font-semibold">Project Name</div>
-                            <div className="text-info  font-condensed text-8xl font-bold">25%</div>
-                            <div className="text-info ">4 Phases remaining</div>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">25%</div>
+                                <div className="text-[#CDEA68]">Phase 2</div>
+                                <progress className="progress progress-info w-56" value={50} max="100"></progress>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,7 +125,7 @@ function User() {
                 <div className="collapse-title bg-zinc-900 tracking-tight text-lg peer-checked:bg-zinc-700 peer-checked:text-white">
                     Previous Projects
                 </div>
-                <div tabIndex={0} className="collapse-content flex flex-col gap-2 text-md peer-checked:bg-zinc-700 peer-checked:text-secondary-content">
+                <div tabIndex={0} className="collapse-content flex flex-col gap-2 text-md peer-checked:bg-zinc-700 peer-checked:text-white">
                     <div className={`${theme.ProjectCards}`}>
                         <div className='w-1/2 flex flex-col gap-2 text-center px-5'>
                             <div className="text-info text-lg font-semibold">Lorem ipsum</div>
