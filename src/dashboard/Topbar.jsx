@@ -2,7 +2,7 @@ import React from 'react'
 
 function Topbar(props) {
   return (
-    <div className="navbar w-full px-[1vw] py-[2vh] backdrop-blur-sm">
+    <div className="navbar w-full px-[1vw] py-[2vh]">
       <div className="flex-1">
         <a className='invert flex w-[10vw]' href="#">
           <img src="img\logo\supreme.svg" alt="" />
@@ -15,7 +15,7 @@ function Topbar(props) {
               <img alt={props.name} src={props.img} />
             </div>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 border-2 rounded-box w-[10vw] text-display backdrop-blur-lg">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 border-2 rounded-box w-[10vw] text-display bg-black">
             <li><a>Change View</a></li>
             <li><a>Logout</a></li>
           </ul>

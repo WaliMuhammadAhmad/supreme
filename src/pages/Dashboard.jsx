@@ -1,19 +1,37 @@
 import React from 'react'
 import Topbar from '../dashboard/Topbar'
-import SideBar from '../dashboard/SideBar'
+import User from '../dashboard/User'
+import Admin from '../dashboard/Admin'
 
-function Dashboard() {
+
+function Dashboard(props) {
     const person = {
         name: 'Wali Muhammad',
         img: 'img/social/founder.jpg'
     }
+
+    const admin = {
+      name: 'Wali Muhammad',
+      img: 'img/social/founder.jpg'
+  }
     
-  return (
-    <div className='h-screen bg-cover bg-[url("C:\Users\wali\Documents\Project\supreme\public\img\logo\logo.svg")]'>
-        <Topbar {...person} />
-        <SideBar />
-    </div>
-  )
+  if (props.text === 'user') {
+    return (
+      <div className='bg-zinc-900'>
+          <Topbar {...person} />
+          <User />
+      </div>
+    )
+  } else if (props.text == 'admin') {
+    return (
+      <div className='bg-zinc-900'>
+          <Topbar {...admin} />
+          <Admin />
+      </div>
+    )
+  }
+  else 
+    return null;
 }
 
 export default Dashboard

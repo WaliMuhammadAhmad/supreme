@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Content from '../components/Content'
 import CardContainer from '../components/CardContainer'
 import Featured from '../components/Featured'
 import Founder from '../components/Founder'
@@ -18,9 +19,10 @@ function Approach() {
     <div>
       <Navbar />
       <CardContainer />
-      <Founder {...msg} />
+      <Content />
       <Meet />
       <Featured />
+      <Founder {...msg} />
       <Cards />
       <Footer />
     </div>

@@ -8,16 +8,11 @@ import Approach from './pages/Approach';
 import Project from './pages/Project';
 import NotFound from './pages/NotFound';
 import Slip from './pages/Slip';
-import Stats from './dashboard/content/Stats';
-// import NewProject from './dashboard/content/NewProject';
-// import Users from './dashboard/content/Users';
-// import Profile from './dashboard/content/Profile';
-// import Progress from './dashboard/content/Progress';
 import LocomotiveScroll from 'locomotive-scroll';
 // import { checkUserAuthentication } from './utils/auth';
-import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 const router = createBrowserRouter([
   // {
@@ -74,23 +69,22 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: '/dashboard',
-    element: <Dashboard />,
+    path: '/userpanel',
+    element: <Dashboard text={'user'} />,
     errorElement: <NotFound />,
-    children: [
-      {
-        path: '/dashboard/:pageName',
-        element: <Stats />
-      }
-    ],
+  },
+  {
+    path: '/adminpanel',
+    element: <Dashboard text={'admin'} />,
+    errorElement: <NotFound />,
   }
   // Other routes...
 ]);
 
-function PrivateRoute({ children }) {
-  const isAuthenticated = checkUserAuthentication();
-  return isAuthenticated ? children : <Navigate to="/login" />;
-}
+// function PrivateRoute({ children }) {
+//   const isAuthenticated = checkUserAuthentication();
+//   return isAuthenticated ? children : <Navigate to="/login" />;
+// }
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();

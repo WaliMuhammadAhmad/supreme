@@ -2,12 +2,14 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div className='w-full h-screen flex justify-center items-end font-condensed bg-zinc-800'>
-      <img src="img\asserts\search.svg" alt="" />
-      <h1 className='text-5xl'>404</h1>
-      <h2 className='text-2xl'>Page Not Found</h2>
-
+    <div className='relative w-full h-screen flex flex-col justify-center items-center font-condensed bg-black'>
+      <img src="img/asserts/ghost.gif" alt="" />
+      <div className="absolute bottom-0 text-center">
+        <h1 className='text-5xl'>404</h1>
+        <h2 className='text-2xl'>Page Not Found</h2>
+      </div>
     </div>
+
   )
 }
 

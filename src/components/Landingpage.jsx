@@ -9,6 +9,8 @@ function Landingpage(props) {
         btnLink:props.btnLink
     }
 
+    console.log(props.scroll)
+
     return (
         <div data-scroll data-scroll-speed={props.scroll} className='w-full lg:h-screen md:h-full bg-zinc-900 pt-1 text-white'>
             <div className="textstructure mt-40 px-20">
@@ -22,7 +24,7 @@ function Landingpage(props) {
                                         animate={{ width: "8vw" }}
                                         transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
                                     >
-                                        <img className='mr-[.2vw] w-[8vw] rounded-lg h-[5vw] pr-1' src={props.url} alt="" />
+                                        <img className='mr-[.2vw] lg:mb-2 sm:mb-1  w-[8vw] rounded-lg h-[5vw] pr-1' src={props.url} alt="" />
                                     </motion.div>
                                 )}
                                 <h1 className='flex items-center h-full uppercase text-[7vw] leading-[6vw] tracking-tighter font-bold'>
@@ -37,7 +39,7 @@ function Landingpage(props) {
             <div className="px-8 py-5 border-t-[1px] border-zinc-800 mt-32 flex justify-between content-baseline">
                 {[props.subtitle, props.description].map((text, index) => (
                     <div className="masker" key={index}>
-                        <p key={index} className='lg:text-lg tracking-tight leading-none'>
+                        <p key={index} className='lg:text-lg tracking-tight leading-none capitalize'>
                             {text}
                         </p>
                     </div>
