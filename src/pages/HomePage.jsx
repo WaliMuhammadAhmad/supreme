@@ -10,6 +10,10 @@ import EyesContainer from '../components/EyesContainer'
 
 function HomePage() {
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   let text = {
     title1: 'we create',
     title2: 'eye-opening',

@@ -4,7 +4,7 @@ function Topbar(props) {
   return (
     <div className="navbar w-full px-[1vw] py-[2vh]">
       <div className="flex-1">
-        <a className='invert flex w-[10vw]' href="#">
+        <a className='invert flex w-[10vw]' href="/">
           <img src="img\logo\supreme.svg" alt="" />
         </a>
       </div>

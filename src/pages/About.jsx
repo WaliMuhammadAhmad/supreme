@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Cards from '../components/Cards'
 import Footer from '../components/Footer'
@@ -9,6 +9,10 @@ import Founder from '../components/Founder';
 import Reviews from '../components/Reviews';
 
 function About() {
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   let text = {
     title1: 'eye-opening',

@@ -14,8 +14,12 @@ let msg = {
 };
 
 function Services() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
-    <div>
+    <div className='text-white'>
       <Navbar />
       <Starter text="Service"/>
       <VideoAnimation />

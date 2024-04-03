@@ -8,10 +8,11 @@ import Approach from './pages/Approach';
 import Project from './pages/Project';
 import NotFound from './pages/NotFound';
 import Slip from './pages/Slip';
-import LocomotiveScroll from 'locomotive-scroll';
-// import { checkUserAuthentication } from './utils/auth';
+import SlidesInfo from './pages/SlideInfo';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+
+import LocomotiveScroll from 'locomotive-scroll';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
   {
     path: '/project',
     element: <Project />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/slideinfo',
+    element: <SlidesInfo />,
     errorElement: <NotFound />,
   },
   {

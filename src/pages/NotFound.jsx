@@ -2,7 +2,7 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div className='relative w-full h-screen flex flex-col justify-center items-center font-condensed bg-black'>
+    <div className='relative w-full h-screen flex flex-col justify-center items-center font-condensed bg-zinc-900 text-white'>
       <img src="img/asserts/ghost.gif" alt="" />
       <div className="absolute bottom-0 text-center">
         <h1 className='text-5xl'>404</h1>

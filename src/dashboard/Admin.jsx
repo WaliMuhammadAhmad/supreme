@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 
 const theme = {
-    SidebarItems: 'font-display tracking-tight py-2 px-2 hover:rounded-xl hover:bg-gray-700 cursor-pointer',
+    SidebarItems: 'font-display tracking-tight py-2 px-2 hover:rounded-l-xl hover:border hover:bg-zinc-800 cursor-pointer',
+    HomeCards: 'w-1/2 mx-2 bg-zinc-700 shadow-lg rounded-lg bg-zinc-900 py-10',
+    HomeProject: 'px-5 bg-zinc-700 shadow-lg rounded-lg bg-zinc-900 py-10',
+    ProjectCards: 'flex justify-around content-around items-center border rounded-xl bg-zinc-900',
 }
 
 function Admin() {
@@ -16,29 +19,63 @@ function Admin() {
     // Content for Home
     const renderHomeContent = () => (
         <div>
-            <div className="flex justify-center items-center h-[77vh]">
-                {/* First Card */}
-                <div className="w-1/2 h-1/3 mx-2 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center">
-                    <div className="text-primary text-4xl font-bold">$</div>
-                    <div className="text-primary text-lg font-semibold">Total Gain</div>
-                    <div className="text-primary text-xl font-bold">25.6K</div>
-                    <div className="text-primary">76% more than last month</div>
+            <div className="flex flex-col gap-5 justify-center items-center">
+                <div className='flex w-full gap-2'>
+                    <div className={`${theme.HomeCards}`}>
+                        <div className='flex flex-col gap-2 text-center'>
+                            <div className="text-[#CDEA68] text-lg font-semibold">Total Gain</div>
+                            <div className="text-[#CDEA68] font-condensed text-8xl font-bold">$ 5600</div>
+                        </div>
+                    </div>
+                    <div className={`${theme.HomeCards}`}>
+                        <div className='flex flex-col gap-2 text-center'>
+                            <div className="text-[#CDEA68] text-lg font-semibold">Current Projects</div>
+                            <div className="text-[#CDEA68] font-condensed text-8xl font-bold">4</div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Second Card */}
-                <div className="w-1/2 h-1/3 mx-2 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="text-secondary w-12 h-12 stroke-current mb-4"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <div className="text-secondary text-lg font-semibold">Current Projects</div>
-                    <div className="text-secondary text-xl font-bold">2</div>
-                    <div className="text-secondary">10% more than last month</div>
-                </div>
-
-                {/* Third Card */}
-                <div className="w-1/2 h-1/3 mx-2 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="text-info w-12 h-12 stroke-current mb-4"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                    <div className="text-info text-lg font-semibold">75% Done</div>
-                    <div className="text-warning text-xl font-bold">Project 1</div>
-                    <div className="text-info">Phase 4 Remaining</div>
+                <div className="w-full bg-zinc-900 shadow-lg rounded-lg px-2 py-5 flex gap-5">
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">67%</div>
+                                <div className="text-[#CDEA68]">Phase 4</div>
+                                <progress className="progress progress-info w-56" value={75} max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">25%</div>
+                                <div className="text-[#CDEA68]">Phase 2</div>
+                                <progress className="progress progress-info w-56" value={50} max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">55%</div>
+                                <div className="text-[#CDEA68]">Phase 3</div>
+                                <progress className="progress progress-info w-56" value={50} max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className={`${theme.HomeProject}`}>
+                            <div className='flex flex-col gap-2 text-center'>
+                                <div className="text-[#CDEA68] text-lg font-semibold">Project Title</div>
+                                <div className="text-[#CDEA68] font-condensed text-8xl font-bold">5%</div>
+                                <div className="text-[#CDEA68]">Phase 1</div>
+                                <progress className="progress progress-info w-56" value={50} max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,8 +95,8 @@ function Admin() {
         }
     };
 
-      // Function to handle cancellation of a project
-      const handleCancelProject = (projectName) => {
+    // Function to handle cancellation of a project
+    const handleCancelProject = (projectName) => {
         const confirmCancel = window.confirm("Are you sure you want to cancel this project?");
         if (confirmCancel) {
             // Logic to cancel project and refund money
@@ -71,155 +108,452 @@ function Admin() {
     // Content for Projects
     const renderProjectsContent = () => (
         <div>
-            <h2>Current Project</h2>
-            <div className='cardcontainer flex gap-5 '>
-                {/* Sample project cards */}
-                <div className='flex flex-col gap-5 justify-center px-2 py-1 border border-zinc-900 rounded-xl'>
-                    <h1 className='text-3xl font-bold'>Project Name 1</h1>
-                    <h1>Status: Finished</h1>
-                    <p className='text-md font-medium'>Project description</p>
-                    <h3>Progress 75%</h3>
-                    <progress className="progress progress-accent" value="75" max="100"></progress>
-                    {/* Buttons for project actions */}
-                    <div className="flex justify-between">
-                        <button onClick={() => handleCompleteProject("Project Name 1")} disabled={completedProjects.includes("Project Name 1")}>Completed</button>
-                        <button onClick={() => handleCancelProject("Project Name 1")}>Cancel</button>
+            <div className="flex flex-col gap-5 h-full">
+                <h1 className='font-condensed text-5xl font-bold'>Current Projects</h1>
+                <div className='flex flex-col gap-2'>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className='w-1/2 flex flex-col gap-2 text-center content-between px-5'>
+                            <p className="text-info text-lg font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <h2 className="text-info font-condensed text-8xl font-bold">67%</h2>
+                            <div className="flex justify-around">
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCompleteProject("Project Name 1")} disabled={completedProjects.includes("Project Name 1")}>Completed</button>
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCancelProject("Project Name 1")}>Cancel</button>
+                            </div>
+                        </div>
+                        <div className="w-20 rounded">
+                            <img src="public\img\slides\bean.png" />
+                        </div>
+                        <div className='flex flex-col gap-2 p-5 border-l'>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 1
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 2
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 3
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 4
+                                    <progress className="progress progress-info w-56" value={75} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert'>Edit</button>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className='w-1/2 flex flex-col gap-2 text-center content-between px-5'>
+                            <p className="text-info text-lg font-semibold">Lorem ipsum amet consectetur adipisicing elit</p>
+                            <h2 className="text-info font-condensed text-8xl font-bold">25%</h2>
+                            <div className="flex justify-around">
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCompleteProject("Project Name 1")} disabled={completedProjects.includes("Project Name 1")}>Completed</button>
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCancelProject("Project Name 1")}>Cancel</button>
+                            </div>
+                        </div>
+                        <div className="w-20 rounded">
+                            <img src="public\img\slides\bean.png" />
+                        </div>
+                        <div className='flex flex-col gap-2 p-5 border-l'>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 1
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 2
+                                    <progress className="progress progress-info w-56" value={25} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 3
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 4
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert'>Edit</button>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className='w-1/2 flex flex-col gap-2 text-center content-between px-5'>
+                            <p className="text-info text-lg font-semibold">Lorem ipsum consectetur adipisicing elit</p>
+                            <h2 className="text-info font-condensed text-8xl font-bold">55%</h2>
+                            <div className="flex justify-around">
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCompleteProject("Project Name 1")} disabled={completedProjects.includes("Project Name 1")}>Completed</button>
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCancelProject("Project Name 1")}>Cancel</button>
+                            </div>
+                        </div>
+                        <div className="w-20 rounded">
+                            <img src="public\img\slides\bean.png" />
+                        </div>
+                        <div className='flex flex-col gap-2 p-5 border-l'>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 1
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 2
+                                    <progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 3
+                                    <progress className="progress progress-info w-56" value={75} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 4
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert'>Edit</button>
+                        </div>
+                    </div>
+                    <div className={`${theme.ProjectCards}`}>
+                        <div className='w-1/2 flex flex-col gap-2 text-center content-between px-5'>
+                            <p className="text-info text-lg font-semibold">Lorem adipisicing elit</p>
+                            <h2 className="text-info font-condensed text-8xl font-bold">5%</h2>
+                            <div className="flex justify-around">
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCompleteProject("Project Name 1")} disabled={completedProjects.includes("Project Name 1")}>Completed</button>
+                                <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert' onClick={() => handleCancelProject("Project Name 1")}>Cancel</button>
+                            </div>
+                        </div>
+                        <div className="w-20 rounded">
+                            <img src="public\img\slides\bean.png" />
+                        </div>
+                        <div className='flex flex-col gap-2 p-5 border-l'>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 1
+                                    <progress className="progress progress-info w-56" value={25} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 2
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 3
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase 4
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <div className='flex gap-2'>
+                                <p className='flex flex-col'>Phase
+                                    <progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                </p>
+                            </div>
+                            <button className='border-2 bg-zinc-900 text-white rounded-md px-2 py-1 hover:invert'>Edit</button>
+                        </div>
                     </div>
                 </div>
-
-                <div className='flex flex-col gap-5 justify-center px-2 py-1 border border-zinc-900 rounded-xl'>
-                    <h1 className='text-3xl font-bold'>Project Name 2</h1>
-                    <h1>Status: Finished</h1>
-                    <p className='text-md font-medium'>Project description</p>
-                    <h3>Progress 75%</h3>
-                    <progress className="progress progress-accent" value="75" max="100"></progress>
-                    {/* Buttons for project actions */}
-                    <div className="flex justify-between">
-                        <button onClick={() => handleCompleteProject("Project Name 2")} disabled={completedProjects.includes("Project Name 2")}>Completed</button>
-                        <button onClick={() => handleCancelProject("Project Name 2")}>Cancel</button>
+                <div tabIndex={0} className="collapse collapse-plus font-display border border-zinc-800 bg-zinc-900">
+                    <input type="checkbox" className="peer" />
+                    <div className="collapse-title bg-zinc-900 tracking-tight text-lg peer-checked:bg-zinc-700 peer-checked:text-white">
+                        Completed Projects
+                    </div>
+                    <div tabIndex={0} className="collapse-content flex flex-col gap-2 text-md peer-checked:bg-zinc-700 peer-checked:text-white">
+                        <div className={`${theme.ProjectCards}`}>
+                            <div className='w-1/2 flex flex-col gap-2 text-center px-5'>
+                                <div className="text-info text-lg font-semibold">Lorem ipsum</div>
+                                <div className="text-info font-condensed text-8xl font-bold">100%</div>
+                                <div className="text-info ">Status: Completed</div>
+                            </div>
+                            <div className="w-20 rounded">
+                                <img src="img\slides\bean.png" />
+                            </div>
+                            <div className='flex flex-col gap-2 p-5 border-l'>
+                                <p>Phase 1</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 2</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 3</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 4</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 5</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                            </div>
+                        </div>
+                        <div className={`${theme.ProjectCards}`}>
+                            <div className='w-1/2 flex flex-col gap-2 text-center px-5'>
+                                <div className="text-info text-lg font-semibold">Lorem</div>
+                                <div className="text-info font-condensed text-8xl font-bold">40%</div>
+                                <div className="text-info ">Status: Canceled</div>
+                            </div>
+                            <div className="w-20 rounded">
+                                <img src="img\slides\bubbles.png" />
+                            </div>
+                            <div className='flex flex-col gap-2 p-5 border-l'>
+                                <p>Phase 1</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 2</p><progress className="progress progress-info w-56" value={100} max="100"></progress>
+                                <p>Phase 3</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                <p>Phase 4</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
+                                <p>Phase 5</p><progress className="progress progress-info w-56" value={0} max="100"></progress>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     );
 
-    // State variables for form fields
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [thumbnail, setThumbnail] = useState(null);
-    const [video, setVideo] = useState(null);
-    const [price, setPrice] = useState('');
+    const [template, setTemplate] = useState({
+        Name: '',
+        Description: '',
+        ImagePath: '',
+        PreviewPath: '',
+    });
 
-    // Function to handle form submission
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Validation logic here
-        // If validation passes, proceed with adding the template
-        // If validation fails, show error messages
+    const [errorsTemplate, setErrorsinTemplate] = useState({
+        Name: '',
+        Description: '',
+        ImagePath: '',
+        PreviewPath: '',
+    });
+
+    const handleChangeinT = (e) => {
+        const { name, value } = e.target;
+        setTemplate({ ...template, [name]: value });
+        if (name === 'Name') {
+            if (!/^[a-zA-Z\s-_]{3,10}$/.test(value)) {
+                setErrorsinTemplate({ ...errorsTemplate, Name: 'Template name must be 3-10 characters and contain only letters.' });
+            } else {
+                setErrorsinTemplate({ ...errorsTemplate, Name: '' });
+            }
+        }
+        if (name === 'Description') {
+            if (!/^[a-zA-Z\s-_]{3,35}$/.test(value)) {
+                setErrorsinTemplate({ ...errorsTemplate, Description: 'Template Description must be 3-35 characters and contain only letters.' });
+            } else {
+                setErrorsinTemplate({ ...errorsTemplate, Description: '' });
+            }
+        }
     };
-
-    // Function to handle discarding form data
-    const handleDiscard = () => {
-        setTitle('');
-        setDescription('');
-        setThumbnail(null);
-        setVideo(null);
-        setPrice('');
-    };
-
 
     const renderAddTemplates = () => (
-        <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-4">Add Template</h1>
-        <form onSubmit={handleSubmit}>
-            {/* Title */}
-            <div className="mb-4">
-                <label htmlFor="title" className="block mb-2">Title</label>
-                <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} className="border border-gray-300 px-3 py-2 rounded-md w-full" />
-            </div>
-            {/* Description */}
-            <div className="mb-4">
-                <label htmlFor="description" className="block mb-2">Description</label>
-                <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} className="border border-gray-300 px-3 py-2 rounded-md w-full"></textarea>
-            </div>
-            {/* Thumbnail Image */}
-            <div className="mb-4">
-                <label htmlFor="thumbnail" className="block mb-2">Thumbnail Image</label>
-                <input type="file" id="thumbnail" accept=".png, .jpg, .jpeg" onChange={(e) => setThumbnail(e.target.files[0])} className="border border-gray-300 px-3 py-2 rounded-md" />
-            </div>
-            {/* Video */}
-            <div className="mb-4">
-                <label htmlFor="video" className="block mb-2">Video</label>
-                <input type="file" id="video" accept=".mp4" onChange={(e) => setVideo(e.target.files[0])} className="border border-gray-300 px-3 py-2 rounded-md" />
-            </div>
-            {/* Price */}
-            <div className="mb-4">
-                <label htmlFor="price" className="block mb-2">Estimated Price</label>
-                <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} className="border border-gray-300 px-3 py-2 rounded-md w-full" />
-            </div>
-            {/* Buttons */}
-            <div className="flex justify-end">
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add</button>
-                <button type="button" onClick={handleDiscard} className="bg-red-500 text-white px-4 py-2 rounded-md">Discard</button>
-            </div>
-        </form>
-    </div>
+        <div className="flex flex-col gap-5 h-full">
+            <h1 className='font-condensed text-5xl font-bold'>Add Template</h1>
+            <form className='w-1/2'>
+                <div className="mb-4">
+                    <label className="block mb-2">Name</label>
+                    <input
+                        type="text"
+                        name="Name"
+                        value={template.Name}
+                        onChange={handleChangeinT}
+                        className="w-full px-3 py-2 bg-zinc-900 text-white border rounded-md focus:outline-none focus:border-primary"
+                    />
+                    {errorsTemplate.Name && <span className="text-red-500">{errorsTemplate.Name}</span>}
+                </div>
+                <div className="mb-4">
+                    <label className="block mb-2">Description</label>
+                    <input
+                        type="text"
+                        name="Description"
+                        value={template.Description}
+                        onChange={handleChangeinT}
+                        className="w-full px-3 py-2 border bg-zinc-900 text-white rounded-md focus:outline-none focus:border-primary"
+                    />
+                    {errorsTemplate.Description && <span className="text-red-500">{errorsTemplate.Description}</span>}
+                </div>
+                <div className="mb-4">
+                    <label className="block mb-2">Thumbnail Image</label>
+                    <input type="file" id="thumbnail" accept=".png, .jpg, .jpeg" onChange={(e) => setThumbnail(e.target.files[0])} className="border border-white bg-zinc-900 px-3 py-2 rounded-xl" />
+                </div>
+                <div className="mb-4">
+                    <label className="block mb-2">Preview</label>
+                    <input type="file" id="video" accept=".mp4, .gif" onChange={(e) => setVideo(e.target.files[0])} className="border border-white bg-zinc-900 px-3 py-2 rounded-xl" />
+                </div>
+                <button type="submit" className="btn bg-zinc-900 text-white hover:invert border-white">Add Template</button>
+            </form>
+        </div>
     );
 
-        // Function to open modal for updating template
-        const handleUpdate = (templateId) => {
-            // Logic to open modal for updating template
-        };
-    
-        // Function to delete template
-        const handleDelete = (templateId) => {
-            // Logic to delete template
-        };
+    // // Function to delete template
+    // const handleDelete = (templateId) => {
+    //     // Logic to delete template
+    // };
 
     // Content for manage template
+
     const renderManageTemplate = () => (
         <div className="container mx-auto px-4">
-            <h1 className="text-3xl font-bold mb-4">Manage Template</h1>
-            {/* Section 1 */}
-            <div className="flex justify-between mb-8">
-                {/* Card 1 */}
-                <div className="w-1/2 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center px-6 py-4">
-                    <h2 className="text-lg font-semibold mb-2">Templates added in last 30 days</h2>
-                    <p className="text-3xl font-bold">10</p>
+
+            {/* Modal for updating template */}
+            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <form method="dialog">
+                        {renderAddTemplates()}
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <p className="pt-4 text-white">Press ESC key or click on ✕ button to close</p>
                 </div>
-                {/* Card 2 */}
-                <div className="w-1/2 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center px-6 py-4">
-                    <h2 className="text-lg font-semibold mb-2">Total Templates</h2>
-                    <p className="text-3xl font-bold">50</p>
+            </dialog>
+
+            <h1 className='font-condensed text-5xl font-bold'>Manage Templates</h1>
+            <div className='flex w-full gap-2'>
+                <div className={`${theme.HomeCards}`}>
+                    <div className='flex flex-col gap-2 text-center'>
+                        <div className="text-[#CDEA68] text-lg font-semibold">Template Added</div>
+                        <div className="text-[#CDEA68] font-condensed text-8xl font-bold">1</div>
+                    </div>
+                </div>
+                <div className={`${theme.HomeCards}`}>
+                    <div className='flex flex-col gap-2 text-center'>
+                        <div className="text-[#CDEA68] text-lg font-semibold">Total Templates</div>
+                        <div className="text-[#CDEA68] font-condensed text-8xl font-bold">10</div>
+                    </div>
                 </div>
             </div>
-            {/* Section 2 */}
-            <div className="overflow-x-auto">
+
+            <div className="overflow-x-auto pt-5">
                 <table className="table">
                     {/* Table Head */}
                     <thead>
                         <tr>
-                            <th>Thumbnail</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                            <th className='text-display text-lg'>Thumbnail</th>
+                            <th className='text-display text-lg'>Name</th>
+                            <th className='text-display text-lg'>Description</th>
+                            <th className='text-display text-lg'>Actions</th>
                         </tr>
                     </thead>
                     {/* Table Body */}
                     <tbody>
-                        {/* Example Template Row */}
                         <tr>
                             <td>
-                                <img src="img\slides\bean.png" alt="Thumbnail" className="w-16 h-16" />
+                                <img src="img\slides\bean.png" alt="Thumbnail" className="w-25 h-16" />
                             </td>
-                            <td>Template 1</td>
-                            <td>Description of Template 1</td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
                             <td>
-                                <button onClick={() => handleUpdate(1)} className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
                                 <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
                             </td>
                         </tr>
-                        {/* Add more template rows here */}
+                        <tr>
+                            <td>
+                                <img src="img\slides\zoom.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(2)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\bean.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(3)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\spotify.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(4)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\netflix.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(5)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\swip.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(6)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\roadmap.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(7)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\neon.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(8)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\zoom.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(9)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img\slides\swip_x.png" alt="Thumbnail" className="w-25 h-16" />
+                            </td>
+                            <td>Sketch</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloremqu</td>
+                            <td>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="bg-zinc-700 text-white px-4 py-2 rounded-md mr-2">Update</button>
+                                <button onClick={() => handleDelete(10)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -232,29 +566,29 @@ function Admin() {
         {
             id: 1,
             name: 'John Doe',
-            avatar: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+            avatar: 'img/social/rooler.jpg',
         },
         {
             id: 2,
             name: 'Jane Smith',
-            avatar: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+            avatar: 'img/social/rooler.jpg',
         },
         {
             id: 3,
             name: 'Michael Johnson',
-            avatar: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+            avatar: 'img/social/rooler.jpg',
         },
-        // Add more users as needed
     ]);
 
     const totalUsers = users.length;
 
     const renderManageUser = () => (
         <div>
-            {/* Total Users Card */}
-            <div className="w-full h-32 bg-white shadow-lg rounded-lg flex justify-center items-center mb-8">
-                <div className="text-4xl font-bold">{totalUsers}</div>
-                <div className="ml-4">
+            <div className="container mx-auto px-4">
+                <h1 className='font-condensed text-5xl font-bold'>Manage Users</h1>
+                <div className='flex flex-col w-full gap-2 py-5 rounded-xl bg-zinc-900 items-center'>
+                    <h1 className="text-[#CDEA68] text-lg font-semibold">Total Users</h1>
+                    <h1 className="text-[#CDEA68] font-condensed text-8xl font-bold">{totalUsers}</h1>
                     <div className="avatar-group -space-x-6 rtl:space-x-reverse">
                         {users.map((user) => (
                             <div key={user.id} className="avatar">
@@ -265,118 +599,152 @@ function Admin() {
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* User List */}
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* Table Head */}
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    {/* Table Body */}
-                    <tbody>
-                        {/* Map through users and render each row */}
-                        {users.map((user) => (
-                            <tr key={user.id}>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
+                <div className="overflow-x-auto pt-5">
+                    <table className="table">
+                        {/* Table Head */}
+                        <thead>
+                            <tr>
+                                <th className='text-display text-lg'>Profile Picture</th>
+                                <th className='text-display text-lg'>Name</th>
+                                <th className='text-display text-lg'>Email</th>
+                                <th className='text-display text-lg'>Actions</th>
+                            </tr>
+                        </thead>
+                        {/* Table Body */}
+                        <tbody>
+                            <tr>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">Update</button>
-                                    <button className="btn btn-ghost btn-xs">Delete</button>
+                                    <img src="img\social\rooler.jpg" alt="User 1" className="size-20 rounded-full" />
+                                </td>
+                                <td>Aurther Morgen</td>
+                                <td>aurther@gmail.com</td>
+                                <td>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
                                 </td>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            <tr>
+                                <td>
+                                    <img src="img\social\rooler.jpg" alt="User 1" className="size-20 rounded-full" />
+                                </td>
+                                <td>John Marshton</td>
+                                <td>johnmarsh@gmail.com</td>
+                                <td>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="img\social\rooler.jpg" alt="User 1" className="size-20 rounded-full" />
+                                </td>
+                                <td>Sean</td>
+                                <td>sean@gmail.com</td>
+                                <td>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
 
-    const [reviews] = useState([
-        {
-            id: 1,
-            userName: 'John Doe',
-            rating: 4,
-            comment: 'Great experience!',
-        },
-        {
-            id: 2,
-            userName: 'Jane Smith',
-            rating: 5,
-            comment: 'Awesome service!',
-        },
-        {
-            id: 3,
-            userName: 'Michael Johnson',
-            rating: 3,
-            comment: 'Could be better.',
-        },
-        // Add more reviews as needed
-    ]);
-
-    const totalReviews = reviews.length;
+    const totalReviews = 3;
 
     const renderManageReview = () => (
         <div>
-            {/* Total Reviews Card */}
-            <div className="w-full h-32 bg-white shadow-lg rounded-lg flex justify-center items-center mb-8">
-                <div className="text-4xl font-bold">{totalReviews}</div>
-            </div>
+            <div className="container mx-auto px-4">
+                <h1 className='font-condensed text-5xl font-bold'>Manage Users</h1>
+                <div className='flex flex-col w-full gap-2 pt-5 rounded-xl bg-zinc-900 items-center'>
+                    <h1 className="text-[#CDEA68] text-lg font-semibold">Total Reviews</h1>
+                    <h1 className="text-[#CDEA68] font-condensed text-8xl font-bold">{totalReviews}</h1>
+                </div>
 
-            {/* Review List */}
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* Table Head */}
-                    <thead>
-                        <tr>
-                            <th>User Name</th>
-                            <th>Rating</th>
-                            <th>Comment</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    {/* Table Body */}
-                    <tbody>
-                        {/* Map through reviews and render each row */}
-                        {reviews.map((review) => (
-                            <tr key={review.id}>
-                                <td>{review.userName}</td>
-                                <td>{review.rating}</td>
-                                <td>{review.comment}</td>
+                <div className="overflow-x-auto pt-5">
+                    <table className="table">
+                        {/* Table Head */}
+                        <thead>
+                            <tr>
+                                <th className='text-display text-lg'>Id</th>
+                                <th className='text-display text-lg'>Name</th>
+                                <th className='text-display text-lg'>Review</th>
+                                <th className='text-display text-lg'>Actions</th>
+                            </tr>
+                        </thead>
+                        {/* Table Body */}
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Aurther Morgen</td>
+                                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit ex facilis iure delectus</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">Update</button>
-                                    <button className="btn btn-ghost btn-xs">Delete</button>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
                                 </td>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+                                <td>John Marshton</td>
+                                <td>Lorem ipsum dolor sit amet consectetur Praesentium excepturi culpa sunt velit omnis qui doloribus debitis quam? Illum eligendi amet necessitatibus accusamus?</td>
+                                <td>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+                                <td>Sean</td>
+                                <td>Lorem consectetur adipisicing elit. Nulla, accusamus. Corporis cum dolorem temporibus est voluptas porro illo quibusdam commodi quisquam.</td>
+                                <td>
+                                    <button onClick={() => handleDelete(1)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    );
-
-    const renderManageProfile = () => (
-        <div>
-            <h1 className="text-3xl font-bold mb-5">Manage Profile</h1>
-            <p>Form for giving a review for the website.</p>
         </div>
     );
 
     const [adminInfo, setAdminInfo] = useState({
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'admin@example.com',
-        // Add more admin info fields as needed
+        firstName: 'Wale',
+        lastName: 'Ahmad',
+        password: 'wale@gmail.com',
+    });
+
+    const [errors, setErrors] = useState({
+        firstName: '',
+        lastName: '',
+        password: '',
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAdminInfo({ ...adminInfo, [name]: value });
+        if (name === 'firstName') {
+            if (!/^[a-zA-Z]{3,15}$/.test(value)) {
+                setErrors({ ...errors, firstName: 'First name must be 3-15 characters and contain only letters.' });
+            } else {
+                setErrors({ ...errors, firstName: '' });
+            }
+        }
+        if (name === 'lastName') {
+            if (!/^[a-zA-Z]{3,15}$/.test(value)) {
+                setErrors({ ...errors, lastName: 'Last name must be 3-15 characters and contain only letters.' });
+            } else {
+                setErrors({ ...errors, lastName: '' });
+            }
+        }
+        if (name === 'password') {
+            if (!/(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,14}/.test(value)) {
+                setErrors({ ...errors, password: 'Password must be 8-14 characters and contain at least one alphabet, integer, and special character.' });
+            } else {
+                setErrors({ ...errors, password: '' });
+            }
+        }
     };
 
     const handleSubmitforProfile = (e) => {
@@ -385,106 +753,97 @@ function Admin() {
         console.log('Admin profile updated:', adminInfo);
     };
 
-
-    // Content for Profile
     const renderProfileContent = () => (
-        <div className="max-w-md mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Manage Admin Profile</h1>
-        <form onSubmit={handleSubmitforProfile}>
-            {/* First Name */}
-            <div className="mb-4">
-                <label className="block mb-2">First Name</label>
-                <input
-                    type="text"
-                    name="firstName"
-                    value={adminInfo.firstName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary"
-                />
-            </div>
-            {/* Last Name */}
-            <div className="mb-4">
-                <label className="block mb-2">Last Name</label>
-                <input
-                    type="text"
-                    name="lastName"
-                    value={adminInfo.lastName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary"
-                />
-            </div>
-            {/* Email */}
-            <div className="mb-4">
-                <label className="block mb-2">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={adminInfo.email}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary"
-                    readOnly // Admin cannot update email
-                />
-            </div>
-            {/* Password (Update functionality can be added similarly) */}
-            <div className="mb-4">
-                <label className="block mb-2">Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter new password"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary"
-                />
-            </div>
-            <button type="submit" className="btn btn-primary">Update Profile</button>
-        </form>
-    </div>
+        <div className="flex flex-col gap-5 h-full">
+            <h1 className='font-condensed text-5xl font-bold'>Manage Admin Profile</h1>
+            <form className='w-1/2' onSubmit={handleSubmitforProfile}>
+
+                <div className="mb-4">
+                    <label className="block mb-2">First Name</label>
+                    <input
+                        type="text"
+                        name="firstName"
+                        value={adminInfo.firstName}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 bg-zinc-900 text-white border rounded-md focus:outline-none focus:border-primary"
+                    />
+                    {errors.firstName && <span className="text-red-500">{errors.firstName}</span>}
+                </div>
+
+                <div className="mb-4">
+                    <label className="block mb-2">Last Name</label>
+                    <input
+                        type="text"
+                        name="lastName"
+                        value={adminInfo.lastName}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border bg-zinc-900 text-white rounded-md focus:outline-none focus:border-primary"
+                    />
+                    {errors.lastName && <span className="text-red-500">{errors.lastName}</span>}
+                </div>
+
+                <div className="mb-4">
+                    <label className="block mb-2">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={adminInfo.password}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border bg-zinc-900 text-white rounded-md focus:outline-none focus:border-primary"
+                    />
+                    {errors.password && <span className="text-red-500">{errors.password}</span>}
+                </div>
+                <button type="submit" className="btn bg-zinc-900 text-white hover:invert border-white">Update Profile</button>
+            </form>
+        </div>
     );
+
 
     return (
         <div className="flex">
             {/* Sidebar */}
-            <div className="bg-gray-800 text-white w-64 flex-shrink-0">
-                <div className="p-6 flex flex-col">
+            <div className="bg-zinc-900 text-white w-64 flex-shrink-0">
+                <div className="py-6 pl-6 flex flex-col">
                     <h2 className="font-condensed lg:text-5xl sm:text-2xl font-bold">Dashboard</h2>
                     <ul className="mt-6">
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Home' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Home' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Home')}
                         >
                             Home
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Projects' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Projects' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Projects')}
                         >
                             Projects
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Add Template' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Add Template' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Add Template')}
                         >
                             Add Template
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Templates' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Templates' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Manage Templates')}
                         >
-                        Manage Templates
+                            Manage Templates
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Manage User' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Manage User' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Manage User')}
-                            >
+                        >
                             Manage User
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Review' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Review' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Manage Review')}
                         >
                             Manage Review
                         </li>
                         <li
-                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Profile' ? 'bg-gray-700 rounded-xl' : ''}`}
+                            className={`${theme.SidebarItems} ${selectedItem === 'Manage Profile' ? 'bg-zinc-800 rounded-l-xl' : ''}`}
                             onClick={() => handleItemClick('Manage Profile')}
                         >
                             Manage Profile
@@ -493,7 +852,7 @@ function Admin() {
                 </div>
             </div>
             {/* Content */}
-            <div className="flex-1 bg-gray-200 p-10">
+            <div className="flex-1 bg-zinc-800 rounded-l-xl p-10">
                 {selectedItem === 'Home' && renderHomeContent()}
                 {selectedItem === 'Projects' && renderProjectsContent()}
                 {selectedItem === 'Add Template' && renderAddTemplates()}
@@ -501,7 +860,6 @@ function Admin() {
                 {selectedItem === 'Manage User' && renderManageUser()}
                 {selectedItem === 'Manage Review' && renderManageReview()}
                 {selectedItem === 'Manage Profile' && renderProfileContent()}
-                {/* {selectedItem === 'Profile' && renderProfileContent()} */}
             </div>
         </div>
     )

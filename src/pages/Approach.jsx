@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Content from '../components/Content'
+import Starter from '../components/Starter'
 import CardContainer from '../components/CardContainer'
 import Featured from '../components/Featured'
 import Founder from '../components/Founder'
@@ -10,14 +11,19 @@ import Footer from '../components/Footer'
 
 function Approach() {
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   let msg = {
     title: 'Founder’s Message',
     text: 'We are a team of professional designers and developers who are dedicated to creating beautiful and effective websites and presentations. We are passionate about our work and we love to turn our clients visions into reality. We are committed to providing the best possible service to our clients and we are always looking for new ways to improve our work. We are always looking for new challenges and we'
-};
+  };
 
   return (
-    <div>
+    <div className='text-white'>
       <Navbar />
+      <Starter text="Our Approach" />
       <CardContainer />
       <Content />
       <Meet />

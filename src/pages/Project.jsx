@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Landingpage from '../components/Landingpage'
 import Navbar from '../components/Navbar';
 import ProjectForm from '../components/ProjectForm';
@@ -10,6 +10,10 @@ import Footer from '../components/Footer';
 import Reviews from '../components/Reviews';
 
 function Project() {
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     let text = {
         title1: 'Let’s start',
@@ -29,7 +33,7 @@ function Project() {
     };
 
     return (
-        <div>
+        <div className='text-white'>
             <Navbar />
             <Landingpage {...text} />
             <VideoAnimation />

@@ -34,12 +34,13 @@ function Slides(props) {
                                 initial={{ y: "100%" }}
                                 animate={cards[0]}
                                 transition={{ ease: [0.22, 1, 0.36, 1], delay: index * .1 }}
-                                className='inline-block uppercase' key={index}>{letter}</motion.span>
+                                className='inline-block uppercase' key={index}>{letter}
+                            </motion.span>
                         ))}
                     </h1>
-                    <div className='card w-full h-full rounded-xl overflow-hidden'>
+                    <a href={"/slideinfo"} className='card w-full h-full rounded-xl overflow-hidden'>
                         <img className='w-full h-full bg-cover' src={props.img1} alt={props.title1} />
-                    </div>
+                    </a>
                 </motion.div>
                 <motion.div
                     onHoverStart={() => handleHoverStart(1)}
@@ -51,12 +52,13 @@ function Slides(props) {
                                 initial={{ y: "100%" }}
                                 animate={cards[1]}
                                 transition={{ ease: [0.22, 1, 0.36, 1], delay: index * .1 }}
-                                className='inline-block uppercase' key={index}>{letter}</motion.span>
+                                className='inline-block uppercase' key={index}>{letter}
+                            </motion.span>
                         ))}
                     </h1>
-                    <div className='card w-full h-full rounded-xl overflow-hidden'>
-                    <img className='w-full h-full' src={props.img2} alt={props.title2} />
-                    </div>
+                    <a href={"/slideinfo"} className='card w-full h-full rounded-xl overflow-hidden'>
+                        <img className='w-full h-full' src={props.img2} alt={props.title2} />
+                    </a>
                 </motion.div>
             </div>
         </div>

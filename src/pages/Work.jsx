@@ -15,14 +15,14 @@ class Content {
   }
 }
 
-const slides1 = new Content("glow", "img/slides/glow.png","neon", "img/slides/neon.png")
-const slides2 = new Content("zoom", "img/slides/zoom.png","morph", "img/slides/trawa.jpg")
-const slides3 = new Content("swip", "img/slides/swip.png","tech", "img/slides/tech.jpg")
-const slides4 = new Content("swip-x", "img/slides/swip_x.png","creative", "img/slides/creative.png")
-const slides5 = new Content("sketch", "img/slides/bean.png","cartoon", "img/slides/onboard.jpg")
-const slides6 = new Content("avatar", "img/slides/GPT4.png","morph", "img/slides/vise.jpg")
-const slides7 = new Content("roadmap", "img/slides/roadmap.png","bubbles", "img/slides/bubbles.png")
-const slides8 = new Content("netflix", "img/slides/netflix.png","spotify", "img/slides/spotify.png")
+const slides1 = new Content("glow", "img/slides/glow.png", "neon", "img/slides/neon.png")
+const slides2 = new Content("zoom", "img/slides/zoom.png", "morph", "img/slides/trawa.jpg")
+const slides3 = new Content("swip", "img/slides/swip.png", "tech", "img/slides/tech.jpg")
+const slides4 = new Content("swip-x", "img/slides/swip_x.png", "creative", "img/slides/creative.png")
+const slides5 = new Content("sketch", "img/slides/bean.png", "cartoon", "img/slides/onboard.jpg")
+const slides6 = new Content("avatar", "img/slides/GPT4.png", "morph", "img/slides/vise.jpg")
+const slides7 = new Content("roadmap", "img/slides/roadmap.png", "bubbles", "img/slides/bubble.png")
+const slides8 = new Content("netflix", "img/slides/netflix.png", "spotify", "img/slides/spotify.png")
 
 
 const slidesArray = [slides1, slides2, slides3, slides4, slides5, slides6, slides7, slides8];
@@ -36,10 +36,15 @@ const renderContent = () => {
 };
 
 function Work() {
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className='w-full'>
+    <div className='w-full text-white'>
       <Navbar />
-      <Starter text="Our Work"/>
+      <Starter text="Our Work" />
       <div className='py-20'>
         {renderContent()}
       </div>
