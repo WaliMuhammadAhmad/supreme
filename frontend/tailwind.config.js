@@ -2,7 +2,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/tw-elements-react/dist/js/**/*.js"
+    "./node_modules/tw-elements/js/**/*.js",
   ],
   theme: {
     screens: {
@@ -20,5 +20,5 @@ export default {
   },
   darkMode: "class",
   plugins: [require("daisyui"),
-  require("tw-elements-react/dist/plugin.cjs")],
+  require("tw-elements/plugin.cjs")],
 }
