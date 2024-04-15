@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RenderUserProfile from './components/RenderUserProfile';
 
 const theme = {
     SidebarItems: 'font-display tracking-tight py-2 px-2 hover:rounded-l-xl hover:border hover:bg-zinc-800 cursor-pointer',
@@ -196,156 +197,6 @@ function User() {
         </div>
     );
 
-    const [userInfo, setUserInfo] = useState({
-        firstName: 'Wali',
-        lastName: 'Muhammad',
-        profilePicture: 'img/social/founder.jpg',
-        newPassword: '',
-        confirmPassword: '',
-    });
-    const [isEditingName, setIsEditingName] = useState(false);
-    const [isEditingPassword, setIsEditingPassword] = useState(false);
-
-    // Function to handle input change for first name and last name
-    const handleNameChange = (event) => {
-        const { name, value } = event.target;
-        setUserInfo((prevUserInfo) => ({
-            ...prevUserInfo,
-            [name]: value,
-        }));
-    };
-
-    // Function to handle profile picture change
-    // const handleProfilePictureChange = (event) => {
-    //     const newProfilePicture = event.target.value;
-    //     setUserInfo((prevUserInfo) => ({
-    //         ...prevUserInfo,
-    //         profilePicture: newProfilePicture,
-    //     }));
-    // };
-
-    // Function to handle password change
-    const handlePasswordChange = (event) => {
-        const { name, value } = event.target;
-        setUserInfo((prevUserInfo) => ({
-            ...prevUserInfo,
-            [name]: value,
-        }));
-    };
-
-    // Function to handle editing of name or password
-    const handleEditClick = (section) => {
-        if (section === 'name') {
-            setIsEditingName(true);
-        } else if (section === 'password') {
-            setIsEditingPassword(true);
-        }
-    };
-
-    // Function to handle update of name or password
-    const handleUpdateClick = (section) => {
-        if (section === 'name') {
-            setIsEditingName(false);
-            // Add logic to update user's name on server
-        } else if (section === 'password') {
-            setIsEditingPassword(false);
-            // Add logic to update user's password on server
-        }
-    };
-
-    // Content for Profile
-    const renderProfileContent = () => (
-        <div className="max-w-lg mx-auto mt-8 p-6 bg-zinc-900 rounded-lg shadow-md">
-            {/* Profile Picture and Name Section */}
-            <div className="flex items-center mb-8">
-                <div className="relative mr-4">
-                    <img
-                        src={userInfo.profilePicture}
-                        alt="Profile"
-                        className="w-24 h-24 rounded-full"
-                    />
-                    {isEditingName && (
-                        <button
-                            onClick={() => handleUpdateClick('name')}
-                            className="absolute top-0 right-0 bg-blue-500 text-white rounded-full p-1"
-                        >
-                            Update
-                        </button>
-                    )}
-                </div>
-                <div>
-                    {isEditingName ? (
-                        <input
-                            type="text"
-                            name="firstName"
-                            value={userInfo.firstName}
-                            onChange={handleNameChange}
-                            className="w-36 mb-2 px-2 py-1 border rounded"
-                        />
-                    ) : (
-                        <h2 className="text-xl font-bold mb-1">{userInfo.firstName} {userInfo.lastName}</h2>
-                    )}
-                    {isEditingName ? (
-                        <input
-                            type="text"
-                            name="lastName"
-                            value={userInfo.lastName}
-                            onChange={handleNameChange}
-                            className="w-36 mb-2 px-2 py-1 border rounded"
-                        />
-                    ) : null}
-                    <button
-                        onClick={() => handleEditClick('name')}
-                        className="text-zinc-500 hover:text-zinc-800"
-                    >
-                        {isEditingName ? 'Cancel' : 'Edit'}
-                    </button>
-                </div>
-            </div>
-
-            {/* Password Section */}
-            <div className="mb-8">
-                <h3 className="text-xl font-bold mb-2">Change Password</h3>
-                {isEditingPassword ? (
-                    <div className="flex">
-                        <input
-                            type="password"
-                            name="newPassword"
-                            value={userInfo.newPassword}
-                            onChange={handlePasswordChange}
-                            placeholder="New Password"
-                            className="w-36 mb-2 mr-2 px-2 py-1 border rounded"
-                        />
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            value={userInfo.confirmPassword}
-                            onChange={handlePasswordChange}
-                            placeholder="Confirm Password"
-                            className="w-36 mb-2 px-2 py-1 border rounded"
-                        />
-                    </div>
-                ) : (
-                    <p className="mb-2">**********</p>
-                )}
-                <button
-                    onClick={() => handleEditClick('password')}
-                    className="text-white hover:text-zinc-700"
-                >
-                    {isEditingPassword ? 'Cancel' : 'Change Password'}
-                </button>
-                {isEditingPassword && (
-                    <button
-                        onClick={() => handleUpdateClick('password')}
-                        className="ml-4 bg-blue-500 text-white px-3 py-1 rounded"
-                    >
-                        Update
-                    </button>
-                )}
-            </div>
-        </div>
-    );
-
     return (
         <div className="flex">
             {/* Sidebar */}
@@ -385,7 +236,7 @@ function User() {
                 {selectedItem === 'Home' && renderHomeContent()}
                 {selectedItem === 'Projects' && renderProjectsContent()}
                 {selectedItem === 'Review' && renderReviewContent()}
-                {selectedItem === 'Profile' && renderProfileContent()}
+                {selectedItem === 'Profile' && <RenderUserProfile />}
             </div>
         </div>
     );

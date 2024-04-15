@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { SuccessAlert, ErrorAlert } from '../components/raw/Alerts';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:8080';
 
 function SignIn() {
 
-    let showSuceess = 'hidden';
-    let showError = 'hidden';
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -22,7 +26,7 @@ function SignIn() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const emailRegex = /^[a-zA-Z][\w.-]*@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
@@ -47,11 +51,25 @@ function SignIn() {
         setErrors(newErrors);
 
         if (formValid) {
-            showSuceess = 'block';
-            console.log('Form submitted:', formData);
+            console.log('Form data:', formData);
+            try {
+                const response = await axios.get('/user');
+                if (response.data.success) {
+                    setShowSuccess(true);
+                    setTimeout(() => setShowSuccess(false), 5000);
+                } else {
+                    setShowError(true);
+                    setTimeout(() => setShowError(false), 5000);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                setShowError(true);
+                setTimeout(() => setShowError(false), 5000);
+            }
         }
         else {
-            showError = 'block';
+            setShowError(true);
+            setTimeout(() => setShowError(false), 5000);
         }
     };
 
@@ -107,6 +125,8 @@ function SignIn() {
                     <Link to="/signup" className="text-zinc-900">Not registered yet? Sign up</Link>
                 </div>
             </div>
+            {showSuccess && <SuccessAlert message="Sign In Succeed!" />}
+            {showError && <ErrorAlert message="Sign In Failed!" />}
         </>
 
     );

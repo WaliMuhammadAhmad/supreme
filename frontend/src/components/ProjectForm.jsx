@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { SuccessAlert, ErrorAlert } from '../components/raw/Alerts';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:8080';
 
 const theme = {
   divClass: 'sm:flex-col sm:pb-5',
@@ -8,27 +12,36 @@ const theme = {
 };
 
 const ContactForm = () => {
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    project: '',
-    color: '',
-    animation: '',
-    whatsapp: '',
-    keyword: '',
-    theme: '',
-    email: '', // Added email field to formData
+    userId: "661d02d7a8a365b8a2426494",
+    projectName: "",
+    type: "",
+    color: "",
+    endDate: "",
+    budget: 0,
+    email: "",
+    keywords: "",
+    file: "",
+    progress: {
+      phase1: 0,
+      phase2: 0,
+      phase3: 0,
+      phase4: 0
+    },
+    isCompleted: false,
+    status: "Started"
   });
 
   const [errors, setErrors] = useState({
-    name: '',
-    company: '',
-    project: '',
+    projectName: '',
     color: '',
-    animation: '',
-    keyword: '',
+    email: '',
     theme: '',
-    email: '', // Added email field to errors
+    keyword: '',
   });
 
   const handleChange = (e) => {
@@ -36,39 +49,23 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let formValid = true;
     const newErrors = { ...errors };
 
     // Validation for each field
     for (const field in formData) {
-      const value = formData[field].trim();
+      const value = formData[field];
       switch (field) {
-        case 'name':
-          if (value.length < 3 || value.length > 15 || !/^[a-zA-Z\s]*$/.test(value)) {
-            newErrors[field] = 'Name should contain 3-15 characters and only letters.';
+        case 'projectName':
+          if (value.length < 3 || value.length > 25 || !/^[a-zA-Z\s]*$/.test(value)) {
+            newErrors[field] = 'Project Name name should be between 3 and 25 characters and only letters.';
             formValid = false;
           } else {
             newErrors[field] = '';
           }
-          break;
-        case 'project':
-          if (value.length < 5 || value.length > 25 || !/^[a-zA-Z\s]*$/.test(value)) {
-            newErrors[field] = 'Project name should be between 5 and 25 characters and only letters.';
-            formValid = false;
-          } else {
-            newErrors[field] = '';
-          }
-          break;
-        case 'animation':
-          if (value.length < 4 || value.length > 25 || !/^[a-zA-Z\s]*$/.test(value)) {
-            newErrors[field] = 'Animation type should be between 4 and 25 characters and only letters.';
-            formValid = false;
-          } else {
-            newErrors[field] = '';
-          }
-          break;
+          break;;
         case 'color':
           if (value.length < 3 || value.length > 25 || !/^[a-zA-Z\s]*$/.test(value)) {
             newErrors[field] = 'Color should be between 3 and 25 characters and only letters.';
@@ -99,58 +96,48 @@ const ContactForm = () => {
     }
 
     setErrors(newErrors);
+
     if (formValid) {
-      // Proceed with form submission
-      console.log('Form submitted successfully:', formData);
-    } else {
-      // Form validation failed, display error messages
-      console.log('Form validation failed:', newErrors);
-    }
+      try {
+          const response = await axios.post('/createproject', formData);
+          if (response.data.success) {
+              setShowSuccess(true);
+              setTimeout(() => setShowSuccess(false), 5000);
+          } else {
+              setShowError(true);
+              setTimeout(() => setShowError(false), 5000);
+          }
+      } catch (error) {
+          console.error('Error:', error);
+          setShowError(true);
+          setTimeout(() => setShowError(false), 5000);
+      }
+  }
+  else {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 5000);
+  }
   };
 
   return (
-    <div className='w-full flex flex-col gap-2 px-10 py-20'>
-      <h1 className='font-condensed text-5xl'>Fill this form to get started:</h1>
+    <div className='w-full h-screen flex flex-col gap-2 px-10 py-20'>
+      <h1 className='font-condensed text-5xl'>Fill this form to start the Project :</h1>
       <form className='font-display p-10 text-xl tracking-tight' method='POST' onSubmit={handleSubmit}>
-
         <div className={theme.divClass}>
-          <label htmlFor="name">Hi! My name is</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={errors.name ? theme.errorClass : theme.successClass}
-            placeholder="*John*"
-            required
-          />
-          <label htmlFor="company">and I work for</label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            className={errors.company ? theme.errorClass : theme.successClass}
-            placeholder="*Company Name* [OPTIONAL]"
-          />
-        </div>
-        <div className={theme.divClass}>
-          <label htmlFor="project">
-            I’m looking to have a project
+          <label htmlFor="projectName">
+            Hi! I’m looking to have a projectName
             <input
               type="text"
-              id='project'
-              name='project'
-              value={formData.project}
+              id='projectName'
+              name='projectName'
+              value={formData.projectName}
               onChange={handleChange}
-              className={errors.project ? theme.errorClass : theme.successClass}
-              placeholder="*Project Name*" min="5" max="25" required />
+              className={errors.projectName ? theme.errorClass : theme.successClass}
+              placeholder="*projectName Name*" min="5" max="25" required />
           </label>
           <label htmlFor="type">
             which is a sort of
-            <select className={theme.successClass} name="sort" id="sort" required>
+            <select className={theme.successClass} name="type" id="type" required>
               <option value="null">*Presentation Type*</option>
               <optgroup label="Business">
                 <option value="type25">Conference Presentation</option>
@@ -195,49 +182,24 @@ const ContactForm = () => {
               className={errors.color ? theme.errorClass : theme.successClass}
               placeholder="*Zinc, Green, Yellow etc*" min="3" max="25" required />
           </label>
-          <label htmlFor="animation">
-            and I'd like to have the Animation as
+          <label htmlFor="endDate">
+            with an idea of having that completed
             <input
-              type="text"
-              id='animation'
-              name='animation'
-              value={formData.animation}
-              onChange={handleChange}
-              className={errors.animation ? theme.errorClass : theme.successClass}
-              placeholder="*Morph, Zoom, none etc*" min="4" max="25" required />
+              type="date"
+              id='endDate'
+              name='endDate'
+              className={theme.successClass} required />
           </label>
         </div>
         <div className={theme.divClass}>
-          <label htmlFor="date">
-            With an idea of having that completed
-            <input
-              type="date"
-              id='date'
-              name='date'
-              className={theme.successClass} required />
-          </label>
           <label htmlFor="budget">
-            I am hoping to stay around a budget range of  $
+            I am hoping to stay around a budget range of $
             <input
               type="number"
               id='budget'
               name='budget'
-              placeholder="*10.0$*" min="10.0" max="10000.0" step="5.0"
+              placeholder="*10*" min="10.0" max="1000.0" step="5"
               className={theme.successClass} required />
-          </label>
-        </div>
-        <div className={theme.divClass}>
-          <label htmlFor="whatsapp">
-            My active Whatsapp Number is
-            <input
-              type="phone"
-              id='whatsapp'
-              name='whatsapp'
-              value={formData.whatsapp}
-              onChange={handleChange}
-              className={errors.whatsapp ? theme.errorClass : theme.successClass}
-              placeholder="*111-222-333-444*"
-              required />
           </label>
           <label htmlFor="email">
             and you can reach me throught my email at
@@ -263,11 +225,11 @@ const ContactForm = () => {
               onChange={handleChange}
               className={errors.keyword ? theme.errorClass : theme.successClass} required />
           </label>
-          <label htmlFor="theme">
-            I want to provie a theme or a file for the project:
+          <label htmlFor="file">
+            I want to provie a theme or a file for the projectName:
             <input
               type="file"
-              id='theme'
+              id='file'
               className="file-input file-input-ghost w-full max-w-xs focus:outline-none " />
           </label>
         </div>
@@ -278,12 +240,15 @@ const ContactForm = () => {
             {errorMessage}
           </div>
         ))}
+
         {/* Submit button */}
         <div className='w-full p-5 sm:flex-col'>
           <label className='text-white pr-5'>By clicking this button, I agree with all terms and conditions</label>
           <input className='border-2 p-2 bg-zinc-900 text-white rounded-full' type="submit" value="Proceed to Payment" />
         </div>
       </form>
+      {showSuccess && <SuccessAlert message="Project Started Successfully!" />}
+      {showError && <ErrorAlert message="Project Failed Successfully!" />}
     </div>
   );
 };
