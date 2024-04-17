@@ -9,6 +9,7 @@ import Founder from '../components/Founder';
 import Reviews from '../components/Reviews';
 
 function About() {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +34,7 @@ function About() {
 
   return (
     <div className='text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Landingpage {...text} />
       <Marquee />
       <Introduction />

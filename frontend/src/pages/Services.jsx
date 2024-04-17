@@ -14,13 +14,15 @@ let msg = {
 };
 
 function Services() {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   return (
     <div className='text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Starter text="Service"/>
       <VideoAnimation />
       <Content />

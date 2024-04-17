@@ -9,6 +9,8 @@ import Footer from '../components/Footer'
 import EyesContainer from '../components/EyesContainer'
 
 function HomePage() {
+  
+  const storedUser = JSON.parse(localStorage.getItem('user'));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,7 +30,7 @@ function HomePage() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Landingpage {...text} />
       <Marquee />
       <EyesContainer />

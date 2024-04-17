@@ -5,19 +5,21 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8080';
 
 const theme = {
-  divClass: 'sm:flex-col sm:pb-5',
+  divClass: 'flex flex-col',
   successClass: 'input input-ghost w-full max-w-xs rounded-none border-b-zinc-100 focus:outline-none focus:border-transparent focus:border-b-zinc-500',
   errorClass: 'input input-ghost w-full max-w-xs rounded-none text-red-500 border-b-red-100 focus:outline-none focus:border-transparent focus:border-b-red-500',
   successMsg: 'text-xl text-white underline hover:no-underline',
 };
 
 const ContactForm = () => {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+  console.log(storedUser)
 
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
   const [formData, setFormData] = useState({
-    userId: "661d02d7a8a365b8a2426494",
+    userId: storedUser._id,
     projectName: "",
     type: "",
     color: "",
@@ -26,14 +28,10 @@ const ContactForm = () => {
     email: "",
     keywords: "",
     file: "",
-    progress: {
-      phase1: 0,
-      phase2: 0,
-      phase3: 0,
-      phase4: 0
-    },
+    progress: 0,
+    status: "Started",
     isCompleted: false,
-    status: "Started"
+    completedFile: "",
   });
 
   const [errors, setErrors] = useState({
@@ -120,7 +118,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='w-full h-screen flex flex-col gap-2 px-10 py-20'>
+    <div className='w-full flex flex-col gap-2 px-10 py-20'>
       <h1 className='font-condensed text-5xl'>Fill this form to start the Project :</h1>
       <form className='font-display p-10 text-xl tracking-tight' method='POST' onSubmit={handleSubmit}>
         <div className={theme.divClass}>
@@ -137,7 +135,9 @@ const ContactForm = () => {
           </label>
           <label htmlFor="type">
             which is a sort of
-            <select className={theme.successClass} name="type" id="type" required>
+            <select className={theme.successClass} 
+              // onChange={handleChange}
+            name="type" id="type" required>
               <option value="null">*Presentation Type*</option>
               <optgroup label="Business">
                 <option value="type25">Conference Presentation</option>
@@ -188,6 +188,7 @@ const ContactForm = () => {
               type="date"
               id='endDate'
               name='endDate'
+              onChange={handleChange}
               className={theme.successClass} required />
           </label>
         </div>
@@ -198,6 +199,7 @@ const ContactForm = () => {
               type="number"
               id='budget'
               name='budget'
+              onChange={handleChange}
               placeholder="*10*" min="10.0" max="1000.0" step="5"
               className={theme.successClass} required />
           </label>
@@ -207,7 +209,6 @@ const ContactForm = () => {
               type="email"
               id='email'
               name='email'
-              value={formData.email}
               onChange={handleChange}
               className={errors.email ? theme.errorClass : theme.successClass}
               placeholder="*John@gmail.com*" required />
@@ -221,15 +222,15 @@ const ContactForm = () => {
               id='keyword'
               name='keyword'
               placeholder="*Keywords or any guidelines*"
-              value={formData.keyword}
               onChange={handleChange}
-              className={errors.keyword ? theme.errorClass : theme.successClass} required />
+              className={errors.keyword ? theme.errorClass : theme.successClass} />
           </label>
           <label htmlFor="file">
             I want to provie a theme or a file for the projectName:
             <input
               type="file"
               id='file'
+              onChange={handleChange}
               className="file-input file-input-ghost w-full max-w-xs focus:outline-none " />
           </label>
         </div>
@@ -244,7 +245,7 @@ const ContactForm = () => {
         {/* Submit button */}
         <div className='w-full p-5 sm:flex-col'>
           <label className='text-white pr-5'>By clicking this button, I agree with all terms and conditions</label>
-          <input className='border-2 p-2 bg-zinc-900 text-white rounded-full' type="submit" value="Proceed to Payment" />
+          <input className='border-2 px-2 bg-zinc-900 text-white rounded-full' type="submit" value="Proceed to Payment" />
         </div>
       </form>
       {showSuccess && <SuccessAlert message="Project Started Successfully!" />}

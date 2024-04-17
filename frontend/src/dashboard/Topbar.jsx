@@ -1,6 +1,11 @@
 import React from 'react'
 
-function Topbar(props) {
+function Topbar() {
+  const handleLogout = () => {
+    // Remove the userData from local storage
+    localStorage.removeItem('user');
+  };
+  
   return (
     <div className="navbar w-full px-[1vw] py-[2vh]">
       <div className="flex-1">
@@ -8,19 +13,9 @@ function Topbar(props) {
           <img src="img\logo\supreme.svg" alt="" />
         </a>
       </div>
-      <div className="flex-none">
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img alt={props.name} src={props.img} />
-            </div>
-          </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 border-2 rounded-box w-[10vw] text-display bg-black">
-            <li><a>Change View</a></li>
-            <li><a>Logout</a></li>
-          </ul>
-        </div>
-      </div>
+          <a className='text-md' href="/">
+            <button onClick={handleLogout}>Logout</button>
+          </a>
     </div>
   )
 }

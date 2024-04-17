@@ -7,13 +7,15 @@ import Cards from '../components/Cards'
 import Footer from '../components/Footer'
 
 function SlidesInfo() {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   return (
     <div className='text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Starter text="Swip" />
       <div className='px-20'>
         <h1 className='font-condensed font-bold text-8xl uppercase py-10 border-b'>Slide Preview</h1>

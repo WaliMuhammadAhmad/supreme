@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import Reviews from '../components/Reviews';
 
 function Project() {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,7 +35,7 @@ function Project() {
 
     return (
         <div className='text-white'>
-            <Navbar />
+            <Navbar user={storedUser} />
             <Landingpage {...text} />
             <VideoAnimation />
             <ProjectForm />

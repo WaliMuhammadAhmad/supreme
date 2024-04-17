@@ -36,6 +36,7 @@ const renderContent = () => {
 };
 
 function Work() {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,7 +44,7 @@ function Work() {
 
   return (
     <div className='w-full text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Starter text="Our Work" />
       <div className='py-20'>
         {renderContent()}

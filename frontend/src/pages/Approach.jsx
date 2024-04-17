@@ -10,6 +10,8 @@ import Cards from '../components/Cards'
 import Footer from '../components/Footer'
 
 function Approach() {
+  
+  const storedUser = JSON.parse(localStorage.getItem('user'));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,7 +24,7 @@ function Approach() {
 
   return (
     <div className='text-white'>
-      <Navbar />
+      <Navbar user={storedUser} />
       <Starter text="Our Approach" />
       <CardContainer />
       <Content />

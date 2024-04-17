@@ -8,6 +8,8 @@ axios.defaults.baseURL = 'http://localhost:8080';
 
 function SignIn() {
 
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
     const [showSuccess, setShowSuccess] = useState(false);
     const [showError, setShowError] = useState(false);
 
@@ -51,9 +53,12 @@ function SignIn() {
         setErrors(newErrors);
 
         if (formValid) {
-            console.log('Form data:', formData);
             try {
-                const response = await axios.get('/user');
+                const response = await axios.post('/signin', formData);
+                console.log('response data',response.data);
+                const userData = response.data.user;
+                localStorage.setItem('user', JSON.stringify(userData));
+                
                 if (response.data.success) {
                     setShowSuccess(true);
                     setTimeout(() => setShowSuccess(false), 5000);
@@ -66,8 +71,7 @@ function SignIn() {
                 setShowError(true);
                 setTimeout(() => setShowError(false), 5000);
             }
-        }
-        else {
+        } else {
             setShowError(true);
             setTimeout(() => setShowError(false), 5000);
         }
@@ -75,7 +79,7 @@ function SignIn() {
 
     return (
         <>
-            <Navbar />
+            <Navbar user={storedUser} />
             <div className="font-display tracking-tight w-full h-screen flex items-center justify-center">
                 <div className="lg:w-1/4 lg:h-3/4 flex flex-col justify-evenly items-center rounded-xl bg-[#CDEA68]">
                     <h1 className='font-condensed lg:text-5xl text-zinc-900'>Sign In</h1>

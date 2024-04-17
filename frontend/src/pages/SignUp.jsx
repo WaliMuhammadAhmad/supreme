@@ -7,6 +7,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8080';
 
 function SignUp() {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
 
     const [showSuccess, setShowSuccess] = useState(false);
     const [showError, setShowError] = useState(false);
@@ -103,7 +104,7 @@ function SignUp() {
 
     return (
         <>
-            <Navbar />
+            <Navbar user={storedUser} />
 
             <div className="font-display tracking-tight w-full h-screen bg-[url('img\logo\logo.svg')] flex items-center justify-center">
                 <div className="lg:w-1/3 lg:h-3/4 flex flex-col justify-evenly items-center rounded-xl bg-[#CDEA68]">
