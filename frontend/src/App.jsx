@@ -1,98 +1,90 @@
-import React from 'react';
-import Dashboard from './pages/Dashboard';
-import HomePage from './pages/HomePage';
-import Services from './pages/Services';
-import Work from './pages/Work';
-import About from './pages/About';
-import Approach from './pages/Approach';
-import Project from './pages/Project';
-import NotFound from './pages/NotFound';
-import Slip from './pages/Slip';
-import SlidesInfo from './pages/SlideInfo';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Dashboard from "./pages/Dashboard";
+import HomePage from "./pages/HomePage";
+import Services from "./pages/Services";
+import Work from "./pages/Work";
+import About from "./pages/About";
+import Approach from "./pages/Approach";
+import Project from "./pages/Project";
+import Slip from "./pages/Slip";
+import SlidesInfo from "./pages/SlideInfo";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import NotFound from "./pages/NotFound";
+import Error from "./pages/Error";
 
-import LocomotiveScroll from 'locomotive-scroll';
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import LocomotiveScroll from "locomotive-scroll";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-  // {
-  //   path: '/dashboard',
-  //   element: (
-  //     <PrivateRoute>
-  //       <Dashboard />
-  //     </PrivateRoute>
-  //   ),
-  // },
   {
-    path: '/',
+    path: "/",
     element: <HomePage />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/services',
+    path: "/services",
     element: <Services />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/work',
+    path: "/work",
     element: <Work />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/about',
+    path: "/about",
     element: <About />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/project',
+    path: "/project",
     element: <Project />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/slideinfo',
+    path: "/slideinfo",
     element: <SlidesInfo />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/slip',
+    path: "/slip",
     element: <Slip />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/approach',
+    path: "/approach",
     element: <Approach />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/signin',
+    path: "/signin",
     element: <SignIn />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/signup',
+    path: "/signup",
     element: <SignUp />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
   },
   {
-    path: '/userpanel',
-    element: <Dashboard text={'user'} />,
-    errorElement: <NotFound />,
+    path: "/userpanel",
+    element: <Dashboard text={"user"} />,
+    errorElement: <Error />,
   },
   {
-    path: '/adminpanel',
-    element: <Dashboard text={'admin'} />,
-    errorElement: <NotFound />,
-  }
-  // Other routes...
+    path: "/adminpanel",
+    element: <Dashboard text={"admin"} />,
+    errorElement: <Error />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+    errorElement: <Error />,
+  },
 ]);
 
-// function PrivateRoute({ children }) {
-//   const isAuthenticated = checkUserAuthentication();
-//   return isAuthenticated ? children : <Navigate to="/login" />;
-// }
-
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const locomotiveScroll = new LocomotiveScroll();
   return <RouterProvider router={router} />;
 }
