@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CustomBtn from "./raw/CustomBtn";
+import CustomBtn from "./common/CustomBtn";
 
 function Landingpage(props) {
   let btn = {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { SuccessAlert, ErrorAlert } from "../../components/raw/Alerts";
+import { SuccessAlert, ErrorAlert } from "../../components/common/Alerts";
 
 function RenderManageUser() {
   const [users, setUsers] = useState([]);
@@ -50,27 +50,27 @@ function RenderManageUser() {
   }, []);
   return (
     <div>
-      {showSuccess && <SuccessAlert message="Profile Deleted Successfully!" />}
-      {showError && <ErrorAlert message="Profile Delete Failed!" />}
-      <div className="container mx-auto px-4">
-        <h1 className="font-condensed text-5xl font-bold">Manage Users</h1>
-        <div className="flex flex-col w-full gap-2 pt-5 rounded-xl bg-zinc-900 items-center">
-          <h1 className="text-[#CDEA68] text-lg font-semibold">Total Users</h1>
-          <h1 className="text-[#CDEA68] font-condensed text-8xl font-bold">
+      {showSuccess && <SuccessAlert message='Profile Deleted Successfully!' />}
+      {showError && <ErrorAlert message='Profile Delete Failed!' />}
+      <div className='container mx-auto px-4'>
+        <h1 className='font-condensed text-5xl font-bold'>Manage Users</h1>
+        <div className='flex flex-col w-full gap-2 pt-5 rounded-xl bg-zinc-900 items-center'>
+          <h1 className='text-[#CDEA68] text-lg font-semibold'>Total Users</h1>
+          <h1 className='text-[#CDEA68] font-condensed text-8xl font-bold'>
             {totalUsers}
           </h1>
         </div>
 
-        <div className="overflow-x-auto pt-5">
-          <table className="table">
+        <div className='overflow-x-auto pt-5'>
+          <table className='table'>
             {/* Table Head */}
             <thead>
               <tr>
-                <th className="text-display text-lg">Id</th>
-                <th className="text-display text-lg">First Name</th>
-                <th className="text-display text-lg">Last Name</th>
-                <th className="text-display text-lg">Email</th>
-                <th className="text-display text-lg">Actions</th>
+                <th className='text-display text-lg'>Id</th>
+                <th className='text-display text-lg'>First Name</th>
+                <th className='text-display text-lg'>Last Name</th>
+                <th className='text-display text-lg'>Email</th>
+                <th className='text-display text-lg'>Actions</th>
               </tr>
             </thead>
             {/* Table Body */}
@@ -87,8 +87,7 @@ function RenderManageUser() {
                         onClick={() => {
                           deleteUser(user._id);
                         }}
-                        className="bg-red-500 text-white px-4 py-2 rounded-md"
-                      >
+                        className='bg-red-500 text-white px-4 py-2 rounded-md'>
                         Delete
                       </button>
                     </td>
