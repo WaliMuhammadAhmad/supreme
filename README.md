@@ -30,56 +30,94 @@ This project is a fully functional freelancing website where clients can place o
 - Node.js: JavaScript runtime environment for server-side development.
 - MongoDB: NoSQL database for storing application data, providing flexibility and scalability.
 
-## Folder Structure
+## 🏗️ Monorepo Structure
+
+This project uses [Turborepo](https://turbo.build) for efficient monorepo management.
 
 ```
-frontend/
-  ├── react-app/       # Frontend React application with Vite
-  │   ├── public/      # Public assets and index.html
-  │   ├── src/         # Source code for React components and pages
-  │   └── package.json # Frontend dependencies and scripts
-backend/
-  ├── express-app/     # Backend Express.js application
-  │   ├── controllers/ # Controllers for handling routes and business logic
-  │   ├── models/      # Data models for MongoDB
-  │   ├── routes/      # Express routes for API endpoints
-  │   └── package.json # Backend dependencies and scripts
+supreme/
+├── apps/
+│   ├── backend/              # @supreme/api - Express.js REST API
+│   │   ├── controllers/     # Business logic
+│   │   ├── models/          # MongoDB models
+│   │   ├── routes/          # API routes
+│   │   ├── config/          # Configuration
+│   │   ├── middleware/      # Express middleware
+│   │   └── utils/           # Helper functions
+│   └── frontend/            # @supreme/web - React + Vite application
+│       ├── src/             # React source code
+│       ├── public/          # Static assets
+│       └── components/      # React components
+├── packages/                # Shared packages
+│   ├── shared-utils/       # @supreme/shared-utils - Common utilities
+│   └── eslint-config/      # @supreme/eslint-config - ESLint config
+├── turbo.json              # Turborepo configuration
+└── package.json            # Root workspace configuration
 ```
 
-## Installation
+📖 **For detailed monorepo documentation, see [MONOREPO_GUIDE.md](./MONOREPO_GUIDE.md)**
 
-1. Clone the repository to your local machine:
+> **Note:** This monorepo uses **JavaScript (ES6+)** - TypeScript is not configured. See [JS_SETUP.md](./JS_SETUP.md) for details.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js >= 18.0.0
+- npm >= 10.0.0
+- MongoDB (local or MongoDB Atlas)
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-git clone <https://github.com/WaliMuhammadAhmad/supreme.git>
+git clone https://github.com/WaliMuhammadAhmad/supreme.git
+cd supreme
 ```
 
-2. Install dependencies for the frontend and backend:
-- I recommend split the terminal:
+2. Install all dependencies (this installs for all workspaces):
+
 ```bash
-# Navigate to the frontend directory
-cd frontend/react-app
-```
-```
-# Install frontend dependencies
-npm install
-```
-```
-# Navigate to the backend directory
-cd ../../backend/express-app
-```
-```
-# Install backend dependencies
 npm install
 ```
 
-3. Start the frontend and backend servers:
+3. Set up environment variables:
+
+```bash
+# Backend environment
+cp apps/backend/.env.example apps/backend/.env
+# Edit apps/backend/.env with your MongoDB URI
+```
+
+4. Start development servers (both frontend and backend):
 
 ```bash
 npm run dev
 ```
 
-4. Access the application in your localhost.
+This single command starts:
+- Frontend at `http://localhost:5173` (Vite default)
+- Backend at `http://localhost:8080`
+
+### Individual Commands
+
+```bash
+# Run only frontend
+npm run dev --workspace=@supreme/web
+
+# Run only backend
+npm run dev --workspace=@supreme/api
+
+# Build everything
+npm run build
+
+# Lint all code
+npm run lint
+
+# Format code
+npm run format
+```
 
 ## License
 

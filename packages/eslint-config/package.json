@@ -1,0 +1,17 @@
+{
+  "name": "@supreme/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "echo 'ESLint config package'"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
+

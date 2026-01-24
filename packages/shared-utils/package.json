@@ -1,0 +1,19 @@
+{
+  "name": "@supreme/shared-utils",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.js",
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "import": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "build": "echo 'No build step required for JavaScript'",
+    "lint": "echo 'Lint configured at root level'",
+    "test": "echo 'Tests not configured yet'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

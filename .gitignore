@@ -32,3 +32,6 @@ frontend/dist-ssr
 
 # Backend directories and files
 backend/node_modules
+
+# Turborepo
+.turbo

@@ -1,0 +1,14 @@
+export const HOME_ROUTE = '/';
+export const SERVICES_ROUTE = '/services';
+export const WORK_ROUTE = '/work';
+export const ABOUT_ROUTE = '/about';
+export const APPROACH_ROUTE = '/approach';
+export const TALK_ROUTE = '/talk';
+export const SLIP_ROUTE = '/slip';
+export const SIGN_IN_ROUTE = '/sign-in';
+export const SIGN_UP_ROUTE = '/sign-up';
+export const DASHBOARD_ROUTE = '/dashboard';
+export const USER_ROUTE = '/user';
+export const ADMIN_ROUTE = '/admin';
+export const ERROR_ROUTE = '/error';
+export const NOT_FOUND_ROUTE='/not-found';
