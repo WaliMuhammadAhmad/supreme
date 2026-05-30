@@ -1,5 +1,6 @@
 # SUPREME
-### we are supreme!
+
+## we are supreme
 
 This project is a fully functional freelancing website where clients can place orders for custom slides, and the admin can create and deliver those slides. Payments are processed through blockchain technology, ensuring secure and transparent transactions.
 
@@ -34,17 +35,17 @@ This project is a fully functional freelancing website where clients can place o
 
 This project uses [Turborepo](https://turbo.build) for efficient monorepo management.
 
-```
+```txt
 supreme/
 ├── apps/
-│   ├── backend/              # @supreme/api - Express.js REST API
+│   ├── api/                # @supreme/api - Express.js REST API
 │   │   ├── controllers/     # Business logic
 │   │   ├── models/          # MongoDB models
 │   │   ├── routes/          # API routes
 │   │   ├── config/          # Configuration
 │   │   ├── middleware/      # Express middleware
 │   │   └── utils/           # Helper functions
-│   └── frontend/            # @supreme/web - React + Vite application
+│   └── web/                # @supreme/web - React + Vite application
 │       ├── src/             # React source code
 │       ├── public/          # Static assets
 │       └── components/      # React components
@@ -54,10 +55,6 @@ supreme/
 ├── turbo.json              # Turborepo configuration
 └── package.json            # Root workspace configuration
 ```
-
-📖 **For detailed monorepo documentation, see [MONOREPO_GUIDE.md](./MONOREPO_GUIDE.md)**
-
-> **Note:** This monorepo uses **JavaScript (ES6+)** - TypeScript is not configured. See [JS_SETUP.md](./JS_SETUP.md) for details.
 
 ## 🚀 Quick Start
 
@@ -86,8 +83,8 @@ npm install
 
 ```bash
 # Backend environment
-cp apps/backend/.env.example apps/backend/.env
-# Edit apps/backend/.env with your MongoDB URI
+cp apps/api/.env.example apps/api/.env
+# Edit apps/api/.env with your MongoDB URI
 ```
 
 4. Start development servers (both frontend and backend):
@@ -97,8 +94,21 @@ npm run dev
 ```
 
 This single command starts:
+
 - Frontend at `http://localhost:5173` (Vite default)
-- Backend at `http://localhost:8080`
+- Backend at `http://localhost:5174`
+
+### Local MongoDB
+
+The local backend is configured for a MongoDB URI like:
+
+```bash
+mongodb://127.0.0.1:27017/supreme
+```
+
+### Vercel Monorepo Deployment
+
+A root `vercel.json` is included for monorepo deploys. The backend API is exposed under `/api/*`, so Vercel should provide the `MONGODB_URI` secret and use `API_BASE_PATH=/api`.
 
 ### Individual Commands
 
