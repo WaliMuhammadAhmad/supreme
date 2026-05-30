@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "apps/api/index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "apps/web/package.json",
+            "use": "@vercel/static-build"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/apps/api/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/apps/web/dist/$1"
+        }
+    ],
+    "env": {
+        "MONGODB_URI": "@mongodb_uri",
+        "API_BASE_PATH": "/api"
+    }
+}
