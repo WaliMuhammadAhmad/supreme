@@ -105,131 +105,137 @@ function SignUp() {
     <>
       <Navbar user={storedUser} />
 
-      <div className="font-display tracking-tight w-full h-screen bg-[url('img\logo\logo.svg')] flex items-center justify-center">
-        <div className='lg:w-1/3 lg:h-3/4 flex flex-col justify-evenly items-center rounded-xl bg-[#CDEA68]'>
-          <h1 className='font-condensed lg:text-5xl text-zinc-900'>Sign Up</h1>
+      <div className="font-display tracking-tight w-full h-screen bg-[url('/img/logo/logo.svg')] flex items-center justify-center">
+        <div className="lg:w-1/3 lg:h-3/4 flex flex-col justify-evenly items-center rounded-xl bg-[#CDEA68]">
+          <h1 className="font-condensed lg:text-5xl text-zinc-900">Sign Up</h1>
           <form
-            className='max-w-md mx-auto'
-            method='POST'
-            onSubmit={handleSubmit}>
-            <div className='grid md:grid-cols-2 md:gap-6'>
-              <div className='relative z-0 w-full mb-5 group'>
+            className="max-w-md mx-auto"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="relative z-0 w-full mb-5 group">
                 <input
-                  type='text'
-                  name='firstName'
+                  type="text"
+                  name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className='block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer'
-                  placeholder=' '
+                  className="block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer"
+                  placeholder=" "
                   required
                 />
                 <label
-                  htmlFor='firstName'
+                  htmlFor="firstName"
                   className={`peer-focus:font-medium absolute text-sm text-zinc-900 dark:text-zinc-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-zinc-900 peer-focus:dark:text-zinc-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
                     errors.firstName && "text-red-500"
-                  }`}>
+                  }`}
+                >
                   First name
                 </label>
                 {errors.firstName && (
-                  <span className='text-red-500'>{errors.firstName}</span>
+                  <span className="text-red-500">{errors.firstName}</span>
                 )}
               </div>
-              <div className='relative z-0 w-full mb-5 group'>
+              <div className="relative z-0 w-full mb-5 group">
                 <input
-                  type='text'
-                  name='lastName'
+                  type="text"
+                  name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className='block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer'
-                  placeholder=' '
+                  className="block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer"
+                  placeholder=" "
                   required
                 />
                 <label
-                  htmlFor='lastName'
+                  htmlFor="lastName"
                   className={`peer-focus:font-medium absolute text-sm text-zinc-900 dark:text-zinc-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-zinc-900 peer-focus:dark:text-zinc-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
                     errors.lastName && "text-red-500"
-                  }`}>
+                  }`}
+                >
                   Last name
                 </label>
                 {errors.lastName && (
-                  <span className='text-red-500'>{errors.lastName}</span>
+                  <span className="text-red-500">{errors.lastName}</span>
                 )}
               </div>
             </div>
-            <div className='relative z-0 w-full mb-5 group'>
+            <div className="relative z-0 w-full mb-5 group">
               <input
-                type='email'
-                name='email'
+                type="email"
+                name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className='block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer'
-                placeholder=' '
+                className="block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer"
+                placeholder=" "
                 required
               />
               <label
-                htmlFor='email'
+                htmlFor="email"
                 className={`peer-focus:font-medium absolute text-sm text-zinc-900 dark:text-zinc-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-900 peer-focus:dark:text-zinc-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
                   errors.email && "text-red-500"
-                }`}>
+                }`}
+              >
                 Email address
               </label>
               {errors.email && (
-                <span className='text-red-500'>{errors.email}</span>
+                <span className="text-red-500">{errors.email}</span>
               )}
             </div>
-            <div className='relative z-0 w-full mb-5 group'>
+            <div className="relative z-0 w-full mb-5 group">
               <input
-                type='password'
-                name='password'
+                type="password"
+                name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className='block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer'
-                placeholder=' '
+                className="block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer"
+                placeholder=" "
                 required
               />
               <label
-                htmlFor='password'
+                htmlFor="password"
                 className={`peer-focus:font-medium absolute text-sm text-zinc-900 dark:text-zinc-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-zinc-900 peer-focus:dark:text-zinc-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
                   errors.password && "text-red-500"
-                }`}>
+                }`}
+              >
                 Password
               </label>
               {errors.password && (
-                <span className='text-red-500'>{errors.password}</span>
+                <span className="text-red-500">{errors.password}</span>
               )}
             </div>
-            <div className='relative z-0 w-full mb-5 group'>
+            <div className="relative z-0 w-full mb-5 group">
               <input
-                type='password'
-                name='repeatPassword'
+                type="password"
+                name="repeatPassword"
                 value={formData.repeatPassword}
                 onChange={handleChange}
-                className='block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer'
-                placeholder=' '
+                className="block py-2.5 px-0 w-full text-sm text-zinc-900 bg-transparent border-0 border-b-2 border-zinc-700 appearance-none dark:text-white dark:border-zinc-900 dark:focus:border-zinc-900 focus:outline-none focus:ring-0 focus:border-zinc-900 peer"
+                placeholder=" "
                 required
               />
               <label
-                htmlFor='repeatPassword'
+                htmlFor="repeatPassword"
                 className={`peer-focus:font-medium absolute text-sm text-zinc-900 dark:text-zinc-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-zinc-900 peer-focus:dark:text-zinc-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
                   errors.repeatPassword && "text-red-500"
-                }`}>
+                }`}
+              >
                 Confirm password
               </label>
               {errors.repeatPassword && (
-                <span className='text-red-500'>{errors.repeatPassword}</span>
+                <span className="text-red-500">{errors.repeatPassword}</span>
               )}
             </div>
             <input
-              type='submit'
-              value='Sign Up'
-              className='w-full py-2.5 px-5 text-sm font-medium border-2 text-zinc-900 border-zinc-900 rounded-md hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-0 focus:border-zinc-900'
+              type="submit"
+              value="Sign Up"
+              className="w-full py-2.5 px-5 text-sm font-medium border-2 text-zinc-900 border-zinc-900 rounded-md hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-0 focus:border-zinc-900"
             />
           </form>
-          <p className='text-zinc-900'>
-            Already have an account?<Link to='/signin'>Sign in</Link>
+          <p className="text-zinc-900">
+            Already have an account?<Link to="/signin">Sign in</Link>
           </p>
-          {showSuccess && <SuccessAlert message='Sign Up Succeed!' />}
-          {showError && <ErrorAlert message='Sign Up Failed!' />}
+          {showSuccess && <SuccessAlert message="Sign Up Succeed!" />}
+          {showError && <ErrorAlert message="Sign Up Failed!" />}
         </div>
       </div>
     </>

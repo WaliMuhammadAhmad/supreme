@@ -1,9 +1,19 @@
+import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router";
 
 export default function App() {
-  // eslint-disable-next-line no-unused-vars
-  const locomotiveScroll = new LocomotiveScroll();
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("#root"),
+      smooth: true,
+    });
+
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
+
   return <RouterProvider router={router} />;
 }

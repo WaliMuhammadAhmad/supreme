@@ -1,23 +1,23 @@
-import React from 'react'
+import React from "react";
 
 function Topbar() {
   const handleLogout = () => {
     // Remove the userData from local storage
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
   };
-  
+
   return (
     <div className="navbar w-full px-[1vw] py-[2vh]">
       <div className="flex-1">
-        <a className='invert flex w-[10vw]' href="/">
-          <img src="img\logo\supreme.svg" alt="" />
+        <a className="invert flex w-[10vw]" href="/">
+          <img src="/img/logo/supreme.svg" alt="Supreme logo" />
         </a>
       </div>
-          <a className='text-md' href="/">
-            <button onClick={handleLogout}>Logout</button>
-          </a>
+      <a className="text-md" href="/">
+        <button onClick={handleLogout}>Logout</button>
+      </a>
     </div>
-  )
+  );
 }
 
-export default Topbar
+export default Topbar;
