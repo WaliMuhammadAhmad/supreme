@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "echo 'Build successful'",
+    "build": "mkdir -p build && echo 'Build successful' > build/.build",
     "lint": "echo 'Lint not configured yet'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf .turbo node_modules"
@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
+  },
+  "turbo": {
+    "outputs": []
   }
 }

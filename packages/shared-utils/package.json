@@ -10,10 +10,13 @@
     }
   },
   "scripts": {
-    "build": "echo 'No build step required for JavaScript'",
+    "build": "mkdir -p build && echo 'No build step required for JavaScript' > build/.build",
     "lint": "echo 'Lint configured at root level'",
     "test": "echo 'Tests not configured yet'"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "turbo": {
+    "outputs": []
+  }
 }
